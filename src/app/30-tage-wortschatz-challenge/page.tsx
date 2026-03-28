@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { landingPageContent } from "@/content/landing-page";
 
+import SectionNav from "@/components/sections/SectionNav";
 import HeroSection from "@/components/sections/HeroSection";
+import SocialProofSection from "@/components/sections/SocialProofSection";
 import PainSection from "@/components/sections/PainSection";
 import MethodSection from "@/components/sections/MethodSection";
 import CourseStructureSection from "@/components/sections/CourseStructureSection";
@@ -109,8 +111,11 @@ export default function WortschatzChallengePage() {
         }}
       />
 
+      <SectionNav />
+
       <main>
         <HeroSection />
+        <SocialProofSection />
         <PainSection />
         <MethodSection />
         <CourseStructureSection />

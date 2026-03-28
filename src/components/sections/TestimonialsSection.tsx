@@ -3,7 +3,8 @@
 import { landingPageContent } from "@/content/landing-page";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import { Star, User } from "lucide-react";
+import { Star } from "lucide-react";
+import Image from "next/image";
 
 const c = landingPageContent.testimonials;
 
@@ -21,18 +22,31 @@ export default function TestimonialsSection() {
       <div className="grid gap-6 md:grid-cols-3">
         {c.testimonials.map((t, i) => (
           <AnimateOnScroll key={i} delay={i * 0.1}>
-            <div
-              className={`relative rounded-2xl border p-6 ${
-                t.isPlaceholder
-                  ? "border-dashed border-stone-300 bg-stone-50"
-                  : "border-stone-200 bg-white shadow-sm"
-              }`}
-            >
-              {t.isPlaceholder && (
-                <span className="absolute -top-3 left-4 rounded-full bg-amber-100 px-3 py-0.5 text-xs font-medium text-amber-700">
-                  Platzhalter
-                </span>
-              )}
+            <div className="flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+              {/* Avatar + Name */}
+              <div className="mb-4 flex items-center gap-3">
+                {t.avatar ? (
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={t.avatar}
+                      alt={t.name}
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-stone-200 text-lg font-bold text-stone-500">
+                    {t.name[0]}
+                  </div>
+                )}
+                <div>
+                  <p className="text-sm font-semibold text-stone-900">
+                    {t.name}
+                  </p>
+                  <p className="text-xs text-stone-500">{t.role}</p>
+                </div>
+              </div>
 
               {/* Rating */}
               {t.rating && (
@@ -46,29 +60,9 @@ export default function TestimonialsSection() {
                 </div>
               )}
 
-              <blockquote className="mb-4 text-stone-700 leading-relaxed">
+              <blockquote className="flex-1 text-sm text-stone-700 leading-relaxed">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-
-              <div className="flex items-center gap-3">
-                {t.avatar ? (
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-200">
-                    <User className="h-5 w-5 text-stone-400" />
-                  </div>
-                )}
-                <div>
-                  <p className="text-sm font-semibold text-stone-900">
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-stone-500">{t.role}</p>
-                </div>
-              </div>
             </div>
           </AnimateOnScroll>
         ))}

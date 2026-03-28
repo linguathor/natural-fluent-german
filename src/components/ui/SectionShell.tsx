@@ -4,7 +4,7 @@ interface SectionShellProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  bg?: "white" | "neutral" | "dark";
+  bg?: "white" | "neutral" | "dark" | "accent";
 }
 
 export default function SectionShell({
@@ -17,6 +17,7 @@ export default function SectionShell({
     white: "bg-white",
     neutral: "bg-stone-50",
     dark: "bg-stone-900 text-white",
+    accent: "bg-emerald-50/60",
   }[bg];
 
   return (

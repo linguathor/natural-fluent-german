@@ -9,7 +9,7 @@ const c = landingPageContent.guarantee;
 
 export default function GuaranteeSection() {
   return (
-    <SectionShell bg="white" id="garantie">
+    <SectionShell bg="accent" id="garantie">
       <AnimateOnScroll>
         <div className="mx-auto max-w-2xl text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">

@@ -38,12 +38,14 @@ export interface MethodContent {
   headline: string;
   subheadline: string;
   features: MethodFeature[];
+  summary: string;
 }
 
 export interface TimelineDay {
   day: string;
   title: string;
   description: string;
+  milestone?: string;
 }
 
 export interface CourseStructureContent {
@@ -160,9 +162,21 @@ export interface FinalCtaContent {
   reassurance: string;
 }
 
+export interface SocialProofStat {
+  icon: string;
+  value: string;
+  label: string;
+}
+
+export interface SocialProofContent {
+  stats: SocialProofStat[];
+}
+
 export interface MediaAssets {
   heroVideo: string;
   flemming: string;
+  flemmingFit: string;
+  podcast: string;
   courseMockup: string;
   happyPeople: string;
 }
@@ -181,6 +195,7 @@ export interface LandingPageContent {
   fit: FitContent;
   faq: FaqContent;
   finalCta: FinalCtaContent;
+  socialProof: SocialProofContent;
   media: MediaAssets;
 }
 
@@ -249,32 +264,40 @@ export const landingPageContent: LandingPageContent = {
         icon: "Headphones",
         title: "Authentischer Input",
         description:
-          'Du lernst mit exklusiven Audios von mir und meiner Schwester Amelie (du kennst sie aus dem bekannten Deutsch Podcast "Deutsches Geplapper"). Echte Dialoge, echtes Deutsch. Wie im Alltag.',
+          'Dialoge zwischen Flemming und Amelie (wie im Podcast "Deutsches Geplapper") mit umgangssprachlichem Deutsch.',
+      },
+      {
+        icon: "Video",
+        title: "Unterhaltsames Material",
+        description:
+          "Zahlreiche Video-Reportagen über spannende und alltagsrelevante Themen.",
       },
       {
         icon: "CalendarDays",
         title: "Täglicher Rhythmus",
         description:
-          "Videos zu Alltagsthemen, die genau die Lücken füllen, die auf B1-B2 Niveau typisch sind.",
+          "Intensives Lernen durch die Herausforderung der Challenge, die dich zum Dranbleiben und Weitermachen motiviert.",
       },
       {
         icon: "Bot",
-        title: "KI-gestützte Anwendung",
+        title: "Modernste Technologie",
         description:
-          "Du lernst nicht nur passiv. Mit Hilfe von KI-Übungen wirst du jeden Tag animiert, das Gelernte sofort aktiv anzuwenden.",
+          "Sofortige Anwendungen des gelernten Wortschatzes durch angeleitetes KI-Training.",
       },
       {
-        icon: "Zap",
-        title: "Flexibilität & Fokus",
+        icon: "RefreshCw",
+        title: "Wiederholung",
         description:
-          "Du entscheidest, wann du lernst (ca. 1–2 Std. täglich). Motivations-Kicks und Wiederholungseinheiten sorgen dafür, dass du dranbleibst.",
+          "Effektive Techniken zur Wiederholung des Wortschatzes für langfristiges Erinnern.",
       },
     ],
+    summary:
+      "Die Kombination aus diesen Techniken wird dir helfen, nicht nur deinen passiven Wortschatz zu steigern, sondern hunderte von neuen Wörtern direkt in deinen aktiven Sprachgebrauch einzubringen. Das sorgt für den wahren Unterschied und für flüssiges Sprechen ohne Denkpausen!",
   },
 
   // ── Course Structure ──────────────────────────
   courseStructure: {
-    headline: "Das erwartet dich im Kurs",
+    headline: "Dein Fahrplan für die kommenden 30 Tage",
     days: [
       {
         day: "Tag 0",
@@ -300,12 +323,26 @@ export const landingPageContent: LandingPageContent = {
         day: "Tag 5",
         title: "Motivationsschub",
         description: "Motivationsschub + Audio-Lektion + Sprechtraining mit KI",
+        milestone: "50+ neue Wörter im aktiven Wortschatz",
+      },
+      {
+        day: "Tag 10",
+        title: "Wiederholung + Video",
+        description: "Wiederholung + Video-Lektion + Sprechtraining mit KI",
+        milestone: "100+ neue Wörter im aktiven Wortschatz",
+      },
+      {
+        day: "Tag 20",
+        title: "Wiederholung + Audio",
+        description: "Wiederholung + Audio-Lektion + Sprechtraining mit KI",
+        milestone: "200+ neue Wörter im aktiven Wortschatz",
       },
       {
         day: "Tag 30",
         title: "Ziel erreicht!",
         description:
           "Letzte Lektion und dann… Glückwunsch, du bist am Ziel!",
+        milestone: "300+ neue Wörter im aktiven Wortschatz",
       },
     ],
     note: "Du folgst einem klaren täglichen Rhythmus aus Lektionen, Wiederholungen und aktivem Sprechtraining – flexibel in deinem Tempo.",
@@ -368,22 +405,28 @@ export const landingPageContent: LandingPageContent = {
     headline: "Diese Leute lieben meine Kurse…",
     testimonials: [
       {
-        name: "TODO: Name",
-        role: "TODO: Rolle / Standort",
-        quote: "TODO: Echtes Testimonial hier einfügen.",
-        isPlaceholder: true,
+        name: "Monika",
+        role: "aus Belarus",
+        quote: "Ich lerne Deutsch seit sechs Jahren und habe viele Kurse ausprobiert. Doch in Flemmings Kursen ist alles anders – sie bleiben spannend, weil ständig neue Lektionen erscheinen. Besonders hilfreich finde ich die KI-Übungen: Jetzt weiß ich genau, wie ich die richtigen Prompts wähle. Das direkte Feedback ist unschlagbar – ehrlich, schnell und motivierend.",
+        avatar: "/testimonial-monika.webp",
+        rating: 5,
+        isPlaceholder: false,
       },
       {
-        name: "TODO: Name",
-        role: "TODO: Rolle / Standort",
-        quote: "TODO: Echtes Testimonial hier einfügen.",
-        isPlaceholder: true,
+        name: "Eduardo",
+        role: "aus Argentinien",
+        quote: "Ich kann die Zusammenarbeit mit Flemming nur empfehlen. Ich habe mein Sprachniveau verbessert und was ich sehr hilfreich finde: Ich habe jetzt mehr Überzeugung, die Sprache selbst zu entwickeln. Es ist sehr flexibel und es gibt viele Möglichkeiten, nicht nur zu lernen, sondern auch Spaß an der deutschen Sprache zu haben.",
+        avatar: "/testimonial-eduardo.webp",
+        rating: 5,
+        isPlaceholder: false,
       },
       {
-        name: "TODO: Name",
-        role: "TODO: Rolle / Standort",
-        quote: "TODO: Echtes Testimonial hier einfügen.",
-        isPlaceholder: true,
+        name: "Daniela",
+        role: "aus Italien",
+        quote: "Mein Ziel war es, fließender Deutsch zu sprechen und mit der Unterstützung und dem Feedback von Flemming kann ich sagen, dass es mir gelungen ist. Ich habe vor allem gelernt, meinen Standpunkt zu verschiedenen Themen darzulegen und zu begründen und habe meinen Wortschatz weiter ausgebaut.",
+        avatar: "/testimonial-daniela.webp",
+        rating: 5,
+        isPlaceholder: false,
       },
     ],
   },
@@ -600,8 +643,8 @@ export const landingPageContent: LandingPageContent = {
       href: "#preise",
     },
     secondaryCta: {
-      label: "Kostenloses Beratungsgespräch buchen",
-      href: "#TODO-calendly-link",
+      label: "",
+      href: "",
     },
     reassurance:
       "100 % Geld-zurück-Garantie · Lebenslanger Zugriff · Sofort starten",
@@ -609,9 +652,32 @@ export const landingPageContent: LandingPageContent = {
 
   // ── Media Assets ──────────────────────────────
   media: {
-    heroVideo: "", // TODO: Hero video URL/path
-    flemming: "", // TODO: Image of Flemming
-    courseMockup: "", // TODO: Course mockup image
-    happyPeople: "", // TODO: Image of happy talking people
+    heroVideo: "",
+    flemming: "/flemming-social-proof.webp",
+    flemmingFit: "/flemming-fit-section.webp",
+    podcast: "/flemming-amelie-podcast.webp",
+    courseMockup: "",
+    happyPeople: "",
+  },
+
+  // ── Social Proof ──────────────────────────────
+  socialProof: {
+    stats: [
+      {
+        icon: "Youtube",
+        value: "79.000",
+        label: "YouTube Subscribers",
+      },
+      {
+        icon: "Podcast",
+        value: "5 Mio.",
+        label: "Podcast Downloads",
+      },
+      {
+        icon: "Users",
+        value: "1.500+",
+        label: "zufriedene Sch\u00fcler in Kursen",
+      },
+    ],
   },
 } as const;

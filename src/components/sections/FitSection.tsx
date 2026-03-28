@@ -4,6 +4,7 @@ import { landingPageContent } from "@/content/landing-page";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { CheckCircle2, XCircle } from "lucide-react";
+import Image from "next/image";
 
 const c = landingPageContent.fit;
 
@@ -18,7 +19,7 @@ export default function FitSection() {
         </div>
       </AnimateOnScroll>
 
-      <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
+      <div className="mx-auto grid max-w-4xl items-start gap-8 md:grid-cols-3">
         {/* Yes column */}
         <AnimateOnScroll delay={0.05}>
           <div className="rounded-2xl bg-emerald-50 p-7">
@@ -36,8 +37,21 @@ export default function FitSection() {
           </div>
         </AnimateOnScroll>
 
+        {/* Flemming image */}
+        <AnimateOnScroll delay={0.1}>
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-2xl">
+            <Image
+              src="/flemming-fit-section.webp"
+              alt="Flemming"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 260px, 220px"
+            />
+          </div>
+        </AnimateOnScroll>
+
         {/* No column */}
-        <AnimateOnScroll delay={0.12}>
+        <AnimateOnScroll delay={0.15}>
           <div className="rounded-2xl bg-stone-100 p-7">
             <h3 className="mb-5 text-lg font-bold text-stone-700">
               Nein, wenn…

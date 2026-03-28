@@ -27,13 +27,6 @@ export default function FinalCtaSection() {
               trackingLocation="final"
               trackingOffer="challenge"
             />
-            <CtaButton
-              cta={c.secondaryCta}
-              variant="secondary"
-              size="lg"
-              trackingLocation="final"
-              trackingOffer="coaching"
-            />
           </div>
 
           <p className="mt-6 text-sm text-stone-400">{c.reassurance}</p>
