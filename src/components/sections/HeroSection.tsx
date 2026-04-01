@@ -25,35 +25,13 @@ export default function HeroSection() {
               {c.subheadline}
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <CtaButton
-                cta={c.primaryCta}
-                variant="primary"
-                size="lg"
-                trackingLocation="hero"
-                trackingOffer="challenge"
-              />
-              <CtaButton
-                cta={c.secondaryCta}
-                variant="secondary"
-                size="lg"
-                trackingLocation="hero"
-                trackingOffer="coaching"
-              />
-            </div>
-
-            {/* Trust markers */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              {c.trustMarkers.map((marker) => (
-                <span
-                  key={marker}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-stone-100 px-3 py-1.5 text-xs font-medium text-stone-600"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                  {marker}
-                </span>
-              ))}
-            </div>
+            <CtaButton
+              cta={c.primaryCta}
+              variant="primary"
+              size="lg"
+              trackingLocation="hero"
+              trackingOffer="challenge"
+            />
           </div>
         </AnimateOnScroll>
 

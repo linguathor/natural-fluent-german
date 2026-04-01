@@ -21,7 +21,7 @@ export default function SectionShell({
   }[bg];
 
   return (
-    <section id={id} className={cn(bgClass, "py-20 md:py-28", className)}>
+    <section id={id} className={cn(bgClass, "py-24 md:py-32", className)}>
       <div className="mx-auto max-w-6xl px-5 md:px-8">{children}</div>
     </section>
   );

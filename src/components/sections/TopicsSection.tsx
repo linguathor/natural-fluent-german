@@ -37,12 +37,12 @@ export default function TopicsSection() {
       </AnimateOnScroll>
 
       {/* Topic carousel */}
-      <div className="relative mx-auto max-w-2xl">
-        <div className="overflow-hidden rounded-2xl bg-stone-900 px-8 py-12 text-center md:px-16 md:py-16">
+      <div className="relative mx-auto max-w-4xl">
+        <div className="overflow-hidden rounded-2xl bg-stone-900 px-10 py-16 text-center md:px-20 md:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-emerald-400 mb-4">
             Thema {current + 1} von {total}
           </p>
-          <p className="text-xl font-bold text-white md:text-2xl lg:text-3xl min-h-[2.5em] flex items-center justify-center">
+          <p className="text-2xl font-bold text-white md:text-3xl lg:text-4xl min-h-[2.5em] flex items-center justify-center">
             {c.topics[current]}
           </p>
 
@@ -80,27 +80,6 @@ export default function TopicsSection() {
         </button>
       </div>
 
-      {/* All topics as chips below */}
-      <AnimateOnScroll delay={0.2}>
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {c.topics.map((topic, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`inline-block rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                i === current
-                  ? "border-emerald-500 bg-emerald-50 text-emerald-800"
-                  : "border-stone-200 bg-stone-50 text-stone-700 hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
-              }`}
-            >
-              {topic}
-            </button>
-          ))}
-          <span className="inline-block rounded-full bg-emerald-100 px-4 py-2 text-sm font-medium text-emerald-700">
-            + viele weitere relevante Themen
-          </span>
-        </div>
-      </AnimateOnScroll>
     </SectionShell>
   );
 }

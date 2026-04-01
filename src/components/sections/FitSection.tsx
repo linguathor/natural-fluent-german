@@ -13,16 +13,16 @@ export default function FitSection() {
     <SectionShell bg="neutral" id="geeignet">
       <AnimateOnScroll>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-12 text-2xl font-bold text-stone-900 md:text-3xl lg:text-4xl">
+          <h2 className="mb-16 text-2xl font-bold text-stone-900 md:text-3xl lg:text-4xl">
             {c.headline}
           </h2>
         </div>
       </AnimateOnScroll>
 
-      <div className="mx-auto grid max-w-4xl items-start gap-8 md:grid-cols-3">
+      <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-3">
         {/* Yes column */}
         <AnimateOnScroll delay={0.05}>
-          <div className="rounded-2xl bg-emerald-50 p-7">
+          <div className="rounded-2xl bg-emerald-50 p-8 md:p-10">
             <h3 className="mb-5 text-lg font-bold text-emerald-800">
               Ja, wenn…
             </h3>
@@ -39,7 +39,7 @@ export default function FitSection() {
 
         {/* Flemming image */}
         <AnimateOnScroll delay={0.1}>
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-2xl">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-2xl">
             <Image
               src="/flemming-fit-section.webp"
               alt="Flemming"
@@ -52,7 +52,7 @@ export default function FitSection() {
 
         {/* No column */}
         <AnimateOnScroll delay={0.15}>
-          <div className="rounded-2xl bg-stone-100 p-7">
+          <div className="rounded-2xl bg-stone-100 p-8 md:p-10">
             <h3 className="mb-5 text-lg font-bold text-stone-700">
               Nein, wenn…
             </h3>

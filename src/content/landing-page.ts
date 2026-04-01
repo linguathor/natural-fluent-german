@@ -286,7 +286,7 @@ export const landingPageContent: LandingPageContent = {
       },
       {
         icon: "RefreshCw",
-        title: "Wiederholung",
+        title: "Wortschatzerweiterung",
         description:
           "Effektive Techniken zur Wiederholung des Wortschatzes für langfristiges Erinnern.",
       },
@@ -652,12 +652,12 @@ export const landingPageContent: LandingPageContent = {
 
   // ── Media Assets ──────────────────────────────
   media: {
-    heroVideo: "",
+    heroVideo: "https://www.youtube.com/embed/I9HxDsBYAK0",
     flemming: "/flemming-social-proof.webp",
     flemmingFit: "/flemming-fit-section.webp",
     podcast: "/flemming-amelie-podcast.webp",
     courseMockup: "",
-    happyPeople: "",
+    happyPeople: "/fr%C3%B6hlich-plappernde-leute.jpg",
   },
 
   // ── Social Proof ──────────────────────────────

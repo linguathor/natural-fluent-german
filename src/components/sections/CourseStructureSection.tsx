@@ -19,7 +19,7 @@ export default function CourseStructureSection() {
       </AnimateOnScroll>
 
       {/* Timeline */}
-      <div className="relative mx-auto mt-14 max-w-2xl">
+      <div className="relative mx-auto mt-14 max-w-4xl">
         {/* Vertical line */}
         <div className="absolute left-6 top-0 hidden h-full w-0.5 bg-emerald-200 md:block" />
 
@@ -69,7 +69,7 @@ export default function CourseStructureSection() {
       </div>
 
       <AnimateOnScroll delay={0.4}>
-        <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-stone-500">
+        <p className="mx-auto mt-10 max-w-4xl text-center text-sm leading-relaxed text-stone-500">
           {c.note}
         </p>
       </AnimateOnScroll>
