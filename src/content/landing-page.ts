@@ -54,10 +54,15 @@ export interface CourseStructureContent {
   note: string;
 }
 
+export interface Topic {
+  label: string;
+  image: string;
+}
+
 export interface TopicsContent {
   headline: string;
   intro: string;
-  topics: string[];
+  topics: Topic[];
 }
 
 export interface OutcomeItem {
@@ -354,16 +359,16 @@ export const landingPageContent: LandingPageContent = {
     intro:
       "Der Kurs nutzt relevante, diskutierbare Themen, die deinen Wortschatz genau dort aufbauen, wo du ihn im echten Leben brauchst — für Gespräche, die wirklich zählen.",
     topics: [
-      "Leben in Zeiten von Künstlicher Intelligenz",
-      "Die 4-Tage-Woche",
-      "Angst vor dem Klimawandel",
-      "Pflege von Angehörigen",
-      "Eifersucht in Beziehungen",
-      "Steuern für Reiche?",
-      "Wohnen in der Zukunft",
-      "Integration in Deutschland",
-      "Gesundheitsbewusstes Leben",
-      "Wählen gehen oder nicht?",
+      { label: "Leben in Zeiten von Künstlicher Intelligenz", image: "/topics/ki-zeitalter.webp" },
+      { label: "Die 4-Tage-Woche", image: "/topics/vier-tage-woche.webp" },
+      { label: "Angst vor dem Klimawandel", image: "/topics/klimawandel.webp" },
+      { label: "Pflege von Angehörigen", image: "/topics/pflege-angehoerige.webp" },
+      { label: "Eifersucht in Beziehungen", image: "/topics/eifersucht.webp" },
+      { label: "Steuern für Reiche?", image: "/topics/steuern-reiche.webp" },
+      { label: "Wohnen in der Zukunft", image: "/topics/wohnen-zukunft.webp" },
+      { label: "Integration in Deutschland", image: "/topics/integration.webp" },
+      { label: "Gesundheitsbewusstes Leben", image: "/topics/gesundheit.webp" },
+      { label: "Wählen gehen oder nicht?", image: "/topics/waehlen.webp" },
     ],
   },
 
