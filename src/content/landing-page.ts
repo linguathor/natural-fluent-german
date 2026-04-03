@@ -652,7 +652,7 @@ export const landingPageContent: LandingPageContent = {
 
   // ── Media Assets ──────────────────────────────
   media: {
-    heroVideo: "https://www.youtube.com/embed/I9HxDsBYAK0",
+    heroVideo: "https://www.youtube.com/embed/7j72tkIboLA",
     flemming: "/flemming-social-proof.webp",
     flemmingFit: "/flemming-fit-section.webp",
     podcast: "/flemming-amelie-podcast.webp",

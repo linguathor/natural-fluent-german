@@ -39,12 +39,12 @@ export default function FitSection() {
 
         {/* Flemming image */}
         <AnimateOnScroll delay={0.1}>
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-2xl">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-2xl bg-stone-200">
             <Image
               src="/flemming-fit-section.webp"
               alt="Flemming"
               fill
-              className="object-cover"
+              className="object-contain object-bottom"
               sizes="(max-width: 768px) 260px, 220px"
             />
           </div>
