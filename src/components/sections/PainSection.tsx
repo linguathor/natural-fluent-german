@@ -22,12 +22,12 @@ export default function PainSection() {
       <div className="mx-auto max-w-5xl grid items-center gap-10 md:grid-cols-[280px_1fr] lg:grid-cols-[340px_1fr]">
         {/* Flemming cutout image */}
         <AnimateOnScroll>
-          <div className="relative mx-auto w-64 md:w-full aspect-[3/4] rounded-2xl bg-emerald-100 overflow-hidden">
+          <div className="relative mx-auto w-64 md:w-full aspect-[3/4] rounded-2xl overflow-hidden">
             <Image
-              src="/flemming-social-proof.webp"
+              src="/flemming-pain-section.webp"
               alt="Flemming – Gründer von Natural Fluent German"
               fill
-              className="object-contain object-bottom drop-shadow-xl"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 256px, 340px"
             />
           </div>

@@ -657,7 +657,7 @@ export const landingPageContent: LandingPageContent = {
     flemmingFit: "/flemming-fit-section.webp",
     podcast: "/flemming-amelie-podcast.webp",
     courseMockup: "",
-    happyPeople: "/fr%C3%B6hlich-plappernde-leute.jpg",
+    happyPeople: "/froehlich-plappernde-leute.webp",
   },
 
   // ── Social Proof ──────────────────────────────
