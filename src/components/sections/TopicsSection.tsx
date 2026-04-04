@@ -106,6 +106,10 @@ export default function TopicsSection() {
         </button>
       </div>
 
+      <p className="mt-6 text-center text-base text-stone-500 md:text-lg">
+        … und viele weitere Themen, die dich wirklich weiterbringen.
+      </p>
+
     </SectionShell>
   );
 }

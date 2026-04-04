@@ -218,7 +218,7 @@ export const landingPageContent: LandingPageContent = {
       "Schluss mit Denkpausen und Unsicherheit. Aktiviere in nur einem Monat den Wortschatz, den du für den echten Alltag und deine Karriere in Deutschland wirklich brauchst.",
     primaryCta: {
       label: "Ja, ich will flüssiger sprechen!",
-      href: "#preise",
+      href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
       label: "Mit Coaching?",
@@ -486,7 +486,7 @@ export const landingPageContent: LandingPageContent = {
         originalPrice: "249 €",
         cta: {
           label: "Jetzt anmelden",
-          href: "#TODO-checkout-challenge",
+          href: "https://www.copecart.com/products/6f447bf1/checkout",
         },
         highlight: false,
       },
@@ -645,7 +645,7 @@ export const landingPageContent: LandingPageContent = {
     text: "Starte jetzt deine 30-Tage-Challenge und aktiviere den Wortschatz, der dir bisher gefehlt hat. Du hast nichts zu verlieren — nur hunderte neue Wörter zu gewinnen.",
     primaryCta: {
       label: "Ja, ich will flüssiger sprechen!",
-      href: "#preise",
+      href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
       label: "",
