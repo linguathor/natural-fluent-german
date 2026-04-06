@@ -1,13 +1,12 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CtaButton from "@/components/ui/CtaButton";
 
-const c = landingPageContent.finalCta;
-
 export default function FinalCtaSection() {
+  const c = useContent().finalCta;
   return (
     <SectionShell bg="neutral" id="start">
       <AnimateOnScroll>

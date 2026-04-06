@@ -1,15 +1,15 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { landingPageContent } from "@/content/landing-page";
+import { useContent, useLanguage } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-const c = landingPageContent.topics;
-
 export default function TopicsSection() {
+  const c = useContent().topics;
+  const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
   const total = c.topics.length;
 
@@ -107,7 +107,9 @@ export default function TopicsSection() {
       </div>
 
       <p className="mt-6 text-center text-base text-stone-500 md:text-lg">
-        … und viele weitere Themen, die dich wirklich weiterbringen.
+        {language === "de"
+          ? "… und viele weitere Themen, die dich wirklich weiterbringen."
+          : "… and many more topics that'll genuinely move the needle."}
       </p>
 
     </SectionShell>

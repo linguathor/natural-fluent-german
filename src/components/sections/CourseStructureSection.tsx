@@ -1,13 +1,12 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { CheckCircle2, TrendingUp } from "lucide-react";
 
-const c = landingPageContent.courseStructure;
-
 export default function CourseStructureSection() {
+  const c = useContent().courseStructure;
   return (
     <SectionShell bg="neutral" id="ablauf">
       <AnimateOnScroll>

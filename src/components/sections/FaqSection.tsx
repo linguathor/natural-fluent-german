@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { trackEvent } from "@/lib/analytics";
 import { ChevronDown } from "lucide-react";
 
-const c = landingPageContent.faq;
-
 export default function FaqSection() {
+  const c = useContent().faq;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {

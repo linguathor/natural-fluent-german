@@ -1,14 +1,16 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import CtaButton from "@/components/ui/CtaButton";
 import VideoFrame from "@/components/ui/VideoFrame";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
-const c = landingPageContent.hero;
+
 
 export default function HeroSection() {
+  const c = useContent().hero;
+  const media = useContent().media;
   return (
     <SectionShell bg="white" className="pt-12 md:pt-20 pb-16 md:pb-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -38,7 +40,7 @@ export default function HeroSection() {
         {/* Right: Video */}
         <AnimateOnScroll delay={0.15}>
           <VideoFrame
-            src={landingPageContent.media.heroVideo}
+            src={media.heroVideo}
             alt="TODO: Hero-Video von Flemming"
           />
         </AnimateOnScroll>

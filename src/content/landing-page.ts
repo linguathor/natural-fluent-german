@@ -687,4 +687,4 @@ export const landingPageContent: LandingPageContent = {
       },
     ],
   },
-} as const;
+};

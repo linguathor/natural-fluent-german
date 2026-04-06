@@ -1,13 +1,12 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { ShieldCheck } from "lucide-react";
 
-const c = landingPageContent.guarantee;
-
 export default function GuaranteeSection() {
+  const c = useContent().guarantee;
   return (
     <SectionShell bg="accent" id="garantie">
       <AnimateOnScroll>

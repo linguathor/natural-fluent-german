@@ -1,10 +1,10 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { Users } from "lucide-react";
 
-const c = landingPageContent.socialProof;
+
 
 function YouTubeIcon({ className }: { className?: string }) {
   return (
@@ -29,6 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function SocialProofSection() {
+  const c = useContent().socialProof;
   return (
     <section className="bg-stone-900 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">

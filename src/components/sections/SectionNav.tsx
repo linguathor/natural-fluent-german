@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
 
-const navItems = [
+const navItemsDe = [
   { label: "Methode", href: "#methode" },
   { label: "Ablauf", href: "#ablauf" },
   { label: "Themen", href: "#themen" },
@@ -13,9 +14,21 @@ const navItems = [
   { label: "FAQ", href: "#faq" },
 ];
 
+const navItemsEn = [
+  { label: "Method", href: "#methode" },
+  { label: "Schedule", href: "#ablauf" },
+  { label: "Topics", href: "#themen" },
+  { label: "Reviews", href: "#erfahrungen" },
+  { label: "Coaching", href: "#coaching" },
+  { label: "Pricing", href: "#preise" },
+  { label: "FAQ", href: "#faq" },
+];
+
 export default function SectionNav() {
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState("");
+  const { language, toggleLanguage } = useLanguage();
+  const navItems = language === "de" ? navItemsDe : navItemsEn;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +52,7 @@ export default function SectionNav() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   return (
     <nav
@@ -64,6 +77,15 @@ export default function SectionNav() {
               {item.label}
             </a>
           ))}
+
+          {/* Language toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="ml-2 shrink-0 rounded-full border border-stone-300 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-100 md:text-sm"
+            aria-label="Toggle language"
+          >
+            {language === "de" ? "EN" : "DE"}
+          </button>
         </div>
       </div>
     </nav>

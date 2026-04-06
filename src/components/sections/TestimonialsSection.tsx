@@ -1,14 +1,13 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { Star } from "lucide-react";
 import Image from "next/image";
 
-const c = landingPageContent.testimonials;
-
 export default function TestimonialsSection() {
+  const c = useContent().testimonials;
   return (
     <SectionShell bg="white" id="erfahrungen">
       <AnimateOnScroll>

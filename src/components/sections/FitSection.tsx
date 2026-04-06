@@ -1,14 +1,14 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent, useLanguage } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { CheckCircle2, XCircle } from "lucide-react";
 import Image from "next/image";
 
-const c = landingPageContent.fit;
-
 export default function FitSection() {
+  const c = useContent().fit;
+  const { language } = useLanguage();
   return (
     <SectionShell bg="neutral" id="geeignet">
       <AnimateOnScroll>
@@ -24,7 +24,7 @@ export default function FitSection() {
         <AnimateOnScroll delay={0.05}>
           <div className="rounded-2xl bg-emerald-50 p-8 md:p-10">
             <h3 className="mb-5 text-lg font-bold text-emerald-800">
-              Ja, wenn…
+              {language === "de" ? "Ja, wenn…" : "Yes, if…"}
             </h3>
             <ul className="space-y-3">
               {c.yes.map((item, i) => (
@@ -54,7 +54,7 @@ export default function FitSection() {
         <AnimateOnScroll delay={0.15}>
           <div className="rounded-2xl bg-stone-100 p-8 md:p-10">
             <h3 className="mb-5 text-lg font-bold text-stone-700">
-              Nein, wenn…
+              {language === "de" ? "Nein, wenn…" : "No, if…"}
             </h3>
             <ul className="space-y-3">
               {c.no.map((item, i) => (

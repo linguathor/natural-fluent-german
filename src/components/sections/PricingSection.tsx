@@ -1,35 +1,40 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent, useLanguage } from "@/lib/language-context";
+import type { CoachingSlot } from "@/content/landing-page";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CtaButton from "@/components/ui/CtaButton";
 import { Check, Sparkles } from "lucide-react";
-
-const c = landingPageContent.pricing;
+import type { Language } from "@/lib/language-context";
 
 function SlotStatus({
   slot,
+  language,
 }: {
-  slot: (typeof c.coachingSlots)[number];
+  slot: CoachingSlot;
+  language: Language;
 }) {
   const statusMap = {
     ausgebucht: {
       bg: "bg-red-100",
       text: "text-red-700",
-      label: "Ausgebucht",
+      label: language === "de" ? "Ausgebucht" : "Sold out",
       emoji: "🔴",
     },
     "wenige-frei": {
       bg: "bg-amber-100",
       text: "text-amber-700",
-      label: `Nur noch ${slot.spotsLeft} Plätze frei!`,
+      label:
+        language === "de"
+          ? `Nur noch ${slot.spotsLeft} Plätze frei!`
+          : `Only ${slot.spotsLeft} spots left!`,
       emoji: "🟡",
     },
     offen: {
       bg: "bg-emerald-100",
       text: "text-emerald-700",
-      label: "Plätze verfügbar",
+      label: language === "de" ? "Plätze verfügbar" : "Spots available",
       emoji: "🟢",
     },
   };
@@ -50,6 +55,8 @@ function SlotStatus({
 }
 
 export default function PricingSection() {
+  const c = useContent().pricing;
+  const { language } = useLanguage();
   return (
     <SectionShell bg="neutral" id="preise">
       <AnimateOnScroll>
@@ -141,11 +148,11 @@ export default function PricingSection() {
               {tier.highlight && c.coachingSlots.length > 0 && (
                 <div className="mt-6 border-t border-stone-200 pt-5">
                   <p className="mb-3 text-center text-sm font-semibold text-stone-700">
-                    Status Coaching-Plätze:
+                    {language === "de" ? "Status Coaching-Plätze:" : "Coaching Spot Availability:"}
                   </p>
                   <div className="space-y-2">
                     {c.coachingSlots.map((slot, si) => (
-                      <SlotStatus key={si} slot={slot} />
+                      <SlotStatus key={si} slot={slot} language={language} />
                     ))}
                   </div>
                 </div>

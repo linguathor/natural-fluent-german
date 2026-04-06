@@ -1,6 +1,6 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const c = landingPageContent.method;
+
 
 const iconMap: Record<string, React.ReactNode> = {
   Headphones: <Headphones className="h-7 w-7" />,
@@ -23,6 +23,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function MethodSection() {
+  const c = useContent().method;
+  const media = useContent().media;
   return (
     <SectionShell bg="white" id="methode">
       {/* Top: Heading left + Image right */}

@@ -1,14 +1,15 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { AlertCircle } from "lucide-react";
 import Image from "next/image";
 
-const c = landingPageContent.pain;
+
 
 export default function PainSection() {
+  const c = useContent().pain;
   return (
     <SectionShell bg="neutral" id="problem">
       <AnimateOnScroll>

@@ -1,6 +1,6 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent, useLanguage } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CtaButton from "@/components/ui/CtaButton";
@@ -15,8 +15,6 @@ import {
 } from "lucide-react";
 import { CheckCircle2 } from "lucide-react";
 
-const c = landingPageContent.coaching;
-
 const featureIcons = [
   <Calendar key="cal" className="h-5 w-5" />,
   <Users key="users" className="h-5 w-5" />,
@@ -28,13 +26,15 @@ const featureIcons = [
 ];
 
 export default function CoachingSection() {
+  const c = useContent().coaching;
+  const { language } = useLanguage();
   return (
     <SectionShell bg="dark" id="coaching">
       <div className="mx-auto max-w-4xl">
         <AnimateOnScroll>
           <div className="mb-4 text-center">
             <span className="inline-block rounded-full bg-emerald-500/20 px-4 py-1.5 text-sm font-medium text-emerald-300">
-              Optionales Upgrade
+              {language === "de" ? "Optionales Upgrade" : "Optional Upgrade"}
             </span>
           </div>
           <h2 className="mb-2 text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
@@ -50,7 +50,7 @@ export default function CoachingSection() {
 
         <AnimateOnScroll delay={0.1}>
           <div className="mb-10 text-center text-sm italic text-stone-400">
-            Was dich im Gruppencoaching erwartet:
+            {language === "de" ? "Was dich im Gruppencoaching erwartet:" : "What to expect from group coaching:"}
           </div>
         </AnimateOnScroll>
 

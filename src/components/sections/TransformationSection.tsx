@@ -1,15 +1,16 @@
 "use client";
 
-import { landingPageContent } from "@/content/landing-page";
+import { useContent, useLanguage } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CtaButton from "@/components/ui/CtaButton";
 import { CheckCircle2, XCircle, ArrowRight } from "lucide-react";
 
-const c = landingPageContent.transformation;
-
 export default function TransformationSection() {
+  const c = useContent().transformation;
+  const content = useContent();
+  const { language } = useLanguage();
   return (
     <SectionShell bg="neutral" id="ergebnis">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -34,7 +35,7 @@ export default function TransformationSection() {
             <div className="mb-8 grid grid-cols-2 gap-4">
               <div className="rounded-xl bg-red-50 p-5">
                 <p className="mb-3 text-xs font-bold uppercase tracking-wider text-red-400">
-                  Vorher
+                  {language === "de" ? "Vorher" : "Before"}
                 </p>
                 <ul className="space-y-2">
                   {c.before.map((item, i) => (
@@ -50,7 +51,7 @@ export default function TransformationSection() {
               </div>
               <div className="rounded-xl bg-emerald-50 p-5">
                 <p className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-500">
-                  Nachher
+                  {language === "de" ? "Nachher" : "After"}
                 </p>
                 <ul className="space-y-2">
                   {c.after.map((item, i) => (
@@ -86,10 +87,10 @@ export default function TransformationSection() {
         {/* Right: Emotional close + Image */}
         <div>
           <AnimateOnScroll delay={0.15}>
-            {landingPageContent.media.happyPeople ? (
+            {content.media.happyPeople ? (
               <img
-                src={landingPageContent.media.happyPeople}
-                alt="Menschen im Gespräch"
+                src={content.media.happyPeople}
+                alt={language === "de" ? "Menschen im Gespr\u00e4ch" : "People in conversation"}
                 className="mb-8 w-full rounded-2xl object-cover"
               />
             ) : (
@@ -103,14 +104,14 @@ export default function TransformationSection() {
           <AnimateOnScroll delay={0.25}>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
               <p className="mb-2 text-sm font-bold uppercase tracking-wider text-emerald-600">
-                Stell dir vor…
+                {language === "de" ? "Stell dir vor…" : "Imagine…"}
               </p>
               <p className="text-lg leading-relaxed text-stone-700">
                 {c.emotionalClose}
               </p>
               <div className="mt-6">
                 <CtaButton
-                  cta={landingPageContent.hero.primaryCta}
+                cta={content.hero.primaryCta}
                   variant="primary"
                   size="md"
                   trackingLocation="transformation"
