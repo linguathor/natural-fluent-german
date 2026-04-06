@@ -124,6 +124,7 @@ export interface PricingTier {
   price: string;
   originalPrice?: string;
   billingNote?: string;
+  priceNote?: string;
   badge?: string;
   cta: CtaContent;
   highlight: boolean;
@@ -467,7 +468,7 @@ export const landingPageContent: LandingPageContent = {
     ],
     cta: {
       label: "Jetzt kostenloses Beratungsgespräch vereinbaren",
-      href: "#TODO-calendly-link",
+      href: "https://calendly.com/goldbecherflemming/strategiegesprach-mit-flemming",
     },
     ctaNote:
       "Lass uns kurz miteinander telefonieren, bevor du dich anmeldest.",
@@ -482,8 +483,9 @@ export const landingPageContent: LandingPageContent = {
     tiers: [
       {
         title: "30 Tage Challenge",
-        price: "189 €",
+        price: "179 €",
         originalPrice: "249 €",
+        priceNote: "Start-Rabatt: Nur bis 15. April!",
         cta: {
           label: "Jetzt anmelden",
           href: "https://www.copecart.com/products/6f447bf1/checkout",
@@ -497,7 +499,7 @@ export const landingPageContent: LandingPageContent = {
         badge: "Premium",
         cta: {
           label: "Kostenloses Beratungsgespräch",
-          href: "#TODO-calendly-link",
+          href: "https://calendly.com/goldbecherflemming/strategiegesprach-mit-flemming",
         },
         highlight: true,
       },

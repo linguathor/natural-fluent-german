@@ -4,7 +4,7 @@ import { landingPageContent } from "@/content/landing-page";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CtaButton from "@/components/ui/CtaButton";
-import { Check, X, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 const c = landingPageContent.pricing;
 
@@ -100,34 +100,32 @@ export default function PricingSection() {
                   {tier.billingNote}
                 </p>
               )}
-              {!tier.billingNote && <div className="mb-6" />}
+              {tier.priceNote && (
+                <p className="mb-6 text-sm font-semibold text-red-600">
+                  {tier.priceNote}
+                </p>
+              )}
+              {!tier.billingNote && !tier.priceNote && <div className="mb-6" />}
 
-              {/* Feature list */}
+              {/* Feature list — only show included features per tier */}
               <ul className="mb-8 space-y-3">
-                {c.features.map((feature, j) => {
-                  const included = i === 0
-                    ? feature.includedInChallenge
-                    : feature.includedInCoaching;
-                  return (
+                {c.features
+                  .filter((feature) =>
+                    i === 0
+                      ? feature.includedInChallenge
+                      : feature.includedInCoaching
+                  )
+                  .map((feature, j) => (
                     <li
                       key={j}
                       className="flex items-start gap-3 text-sm"
                     >
-                      {included ? (
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                      ) : (
-                        <X className="mt-0.5 h-4 w-4 shrink-0 text-stone-300" />
-                      )}
-                      <span
-                        className={
-                          included ? "text-stone-700" : "text-stone-400"
-                        }
-                      >
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                      <span className="text-stone-700">
                         {feature.text}
                       </span>
                     </li>
-                  );
-                })}
+                  ))}
               </ul>
 
               <CtaButton
@@ -138,26 +136,25 @@ export default function PricingSection() {
                 trackingOffer={tier.highlight ? "coaching" : "challenge"}
                 className="w-full justify-center"
               />
+
+              {/* Coaching slots — directly under premium card */}
+              {tier.highlight && c.coachingSlots.length > 0 && (
+                <div className="mt-6 border-t border-stone-200 pt-5">
+                  <p className="mb-3 text-center text-sm font-semibold text-stone-700">
+                    Status Coaching-Plätze:
+                  </p>
+                  <div className="space-y-2">
+                    {c.coachingSlots.map((slot, si) => (
+                      <SlotStatus key={si} slot={slot} />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </AnimateOnScroll>
         ))}
       </div>
 
-      {/* Coaching Slots */}
-      {c.coachingSlots.length > 0 && (
-        <AnimateOnScroll delay={0.3}>
-          <div className="mx-auto mt-10 max-w-xl">
-            <p className="mb-4 text-center text-sm font-semibold text-stone-700">
-              Status Coaching-Plätze:
-            </p>
-            <div className="space-y-2">
-              {c.coachingSlots.map((slot, i) => (
-                <SlotStatus key={i} slot={slot} />
-              ))}
-            </div>
-          </div>
-        </AnimateOnScroll>
-      )}
     </SectionShell>
   );
 }
