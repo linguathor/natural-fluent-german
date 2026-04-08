@@ -437,6 +437,7 @@ export const landingPageContent: LandingPageContent = {
       {
         name: "Tomasz",
         role: "aus Polen",
+        avatar: "/testimonial-tomasz.webp",
         quote: "Ich habe viele Apps und Bücher ausprobiert, aber erst bei Flemmings Kurs hat es wirklich Klick gemacht. Die Kombination aus Audios, Videos und KI-Übungen ist genial – nach zwei Wochen konnte ich in Meetings plötzlich viel schneller reagieren, ohne ewig nach Wörtern zu suchen.",
         rating: 5,
         isPlaceholder: false,
@@ -444,6 +445,7 @@ export const landingPageContent: LandingPageContent = {
       {
         name: "Yuki",
         role: "aus Japan",
+        avatar: "/testimonial-yuki.webp",
         quote: "Was mir am besten gefällt: Die Themen sind alle aus dem echten Leben. Ich habe endlich gelernt, über Alltagsthemen wie Wohnen, Arbeit und Freizeit so zu sprechen, wie es Deutsche wirklich tun. Meine Kollegen haben sofort den Unterschied bemerkt!",
         rating: 5,
         isPlaceholder: false,
@@ -451,6 +453,7 @@ export const landingPageContent: LandingPageContent = {
       {
         name: "Sofia",
         role: "aus Griechenland",
+        avatar: "/testimonial-sofia.webp",
         quote: "Ich war skeptisch, ob man in 30 Tagen wirklich etwas verändern kann. Aber Flemmings Methode hat mich überzeugt: Die täglichen Lektionen sind kurz genug, um dranzubleiben, aber intensiv genug, dass man echte Fortschritte macht. Besonders die Sprachpraxis mit der KI hat mir geholfen, viel selbstbewusster zu werden.",
         rating: 5,
         isPlaceholder: false,

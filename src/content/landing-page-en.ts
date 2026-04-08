@@ -233,6 +233,7 @@ export const landingPageContentEn: LandingPageContent = {
       {
         name: "Tomasz",
         role: "from Poland",
+        avatar: "/testimonial-tomasz.webp",
         quote: "I tried so many apps and textbooks, but Flemming's course is where things finally clicked. The combination of audios, videos, and AI exercises is brilliant – after just two weeks, I could suddenly react much faster in meetings without endlessly searching for words.",
         rating: 5,
         isPlaceholder: false,
@@ -240,6 +241,7 @@ export const landingPageContentEn: LandingPageContent = {
       {
         name: "Yuki",
         role: "from Japan",
+        avatar: "/testimonial-yuki.webp",
         quote: "What I love most: the topics are all from real life. I finally learned to talk about everyday things like housing, work, and hobbies the way Germans actually do. My colleagues noticed the difference right away!",
         rating: 5,
         isPlaceholder: false,
@@ -247,6 +249,7 @@ export const landingPageContentEn: LandingPageContent = {
       {
         name: "Sofia",
         role: "from Greece",
+        avatar: "/testimonial-sofia.webp",
         quote: "I was skeptical whether you can really change anything in 30 days. But Flemming's method convinced me: the daily lessons are short enough to stay consistent, yet intense enough to make real progress. The AI speaking practice especially helped me become much more confident.",
         rating: 5,
         isPlaceholder: false,
