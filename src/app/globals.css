@@ -18,19 +18,13 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
-}
-
-/* Bottom padding on mobile for sticky CTA bar */
-@media (max-width: 767px) {
-  main {
-    padding-bottom: 72px;
-  }
 }
 
 /* Hide scrollbar for horizontal nav */

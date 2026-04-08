@@ -114,25 +114,54 @@ export default function PricingSection() {
               )}
               {!tier.billingNote && !tier.priceNote && <div className="mb-6" />}
 
-              {/* Feature list — only show included features per tier */}
+              {/* Feature list */}
               <ul className="mb-8 space-y-3">
-                {c.features
-                  .filter((feature) =>
-                    i === 0
-                      ? feature.includedInChallenge
-                      : feature.includedInCoaching
-                  )
-                  .map((feature, j) => (
-                    <li
-                      key={j}
-                      className="flex items-start gap-3 text-sm"
-                    >
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                      <span className="text-stone-700">
-                        {feature.text}
+                {i === 0 ? (
+                  // Challenge: show all challenge features
+                  c.features
+                    .filter((feature) => feature.includedInChallenge)
+                    .map((feature, j) => (
+                      <li
+                        key={j}
+                        className="flex items-start gap-3 text-sm"
+                      >
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                        <span className="text-stone-700">
+                          {feature.text}
+                        </span>
+                      </li>
+                    ))
+                ) : (
+                  // Coaching: summary + coaching-only features
+                  <>
+                    <li className="flex items-start gap-3 text-sm">
+                      <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                      <span className="font-semibold text-stone-900">
+                        {language === "de"
+                          ? "Alle Vorteile aus der Challenge"
+                          : "All benefits from the Challenge"}
                       </span>
                     </li>
-                  ))}
+                    <li className="my-2 border-t border-stone-200" />
+                    {c.features
+                      .filter(
+                        (feature) =>
+                          feature.includedInCoaching &&
+                          !feature.includedInChallenge
+                      )
+                      .map((feature, j) => (
+                        <li
+                          key={j}
+                          className="flex items-start gap-3 text-sm"
+                        >
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
+                          <span className="text-stone-700">
+                            {feature.text}
+                          </span>
+                        </li>
+                      ))}
+                  </>
+                )}
               </ul>
 
               <CtaButton

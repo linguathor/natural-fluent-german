@@ -434,6 +434,27 @@ export const landingPageContent: LandingPageContent = {
         rating: 5,
         isPlaceholder: false,
       },
+      {
+        name: "Tomasz",
+        role: "aus Polen",
+        quote: "Ich habe viele Apps und Bücher ausprobiert, aber erst bei Flemmings Kurs hat es wirklich Klick gemacht. Die Kombination aus Audios, Videos und KI-Übungen ist genial – nach zwei Wochen konnte ich in Meetings plötzlich viel schneller reagieren, ohne ewig nach Wörtern zu suchen.",
+        rating: 5,
+        isPlaceholder: false,
+      },
+      {
+        name: "Yuki",
+        role: "aus Japan",
+        quote: "Was mir am besten gefällt: Die Themen sind alle aus dem echten Leben. Ich habe endlich gelernt, über Alltagsthemen wie Wohnen, Arbeit und Freizeit so zu sprechen, wie es Deutsche wirklich tun. Meine Kollegen haben sofort den Unterschied bemerkt!",
+        rating: 5,
+        isPlaceholder: false,
+      },
+      {
+        name: "Sofia",
+        role: "aus Griechenland",
+        quote: "Ich war skeptisch, ob man in 30 Tagen wirklich etwas verändern kann. Aber Flemmings Methode hat mich überzeugt: Die täglichen Lektionen sind kurz genug, um dranzubleiben, aber intensiv genug, dass man echte Fortschritte macht. Besonders die Sprachpraxis mit der KI hat mir geholfen, viel selbstbewusster zu werden.",
+        rating: 5,
+        isPlaceholder: false,
+      },
     ],
   },
 
@@ -494,7 +515,7 @@ export const landingPageContent: LandingPageContent = {
       },
       {
         title: "30 Tage Challenge + Gruppencoaching",
-        price: "2.490 €",
+        price: "990 €",
         billingNote: "In Raten zahlbar",
         badge: "Premium",
         cta: {
@@ -505,6 +526,16 @@ export const landingPageContent: LandingPageContent = {
       },
     ],
     features: [
+      {
+        text: "Videokurs mit Erklärungen & Motivationsvideos",
+        includedInChallenge: true,
+        includedInCoaching: true,
+      },
+      {
+        text: "Wichtigster Wortschatz für B2",
+        includedInChallenge: true,
+        includedInCoaching: true,
+      },
       {
         text: "30-Tage-Programm mit 30 Lektionen",
         includedInChallenge: true,

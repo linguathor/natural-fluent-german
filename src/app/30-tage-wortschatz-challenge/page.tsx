@@ -16,7 +16,6 @@ import GuaranteeSection from "@/components/sections/GuaranteeSection";
 import FitSection from "@/components/sections/FitSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
-import StickyMobileCta from "@/components/sections/StickyMobileCta";
 
 // ── SEO Metadata ────────────────────────────────
 export const metadata: Metadata = {
@@ -129,8 +128,6 @@ export default function WortschatzChallengePage() {
         <FaqSection />
         <FinalCtaSection />
       </main>
-
-      <StickyMobileCta />
     </>
   );
 }

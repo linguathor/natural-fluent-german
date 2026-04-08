@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useContent, useLanguage } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
@@ -12,17 +12,55 @@ export default function TopicsSection() {
   const { language } = useLanguage();
   const [current, setCurrent] = useState(0);
   const total = c.topics.length;
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  const next = useCallback(() => setCurrent((i) => (i + 1) % total), [total]);
-  const prev = useCallback(
-    () => setCurrent((i) => (i - 1 + total) % total),
-    [total]
+  const resetAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => {
+      setCurrent((i) => (i + 1) % total);
+    }, 3500);
+  }, [total]);
+
+  const next = useCallback(() => {
+    setCurrent((i) => (i + 1) % total);
+    resetAutoplay();
+  }, [total, resetAutoplay]);
+
+  const prev = useCallback(() => {
+    setCurrent((i) => (i - 1 + total) % total);
+    resetAutoplay();
+  }, [total, resetAutoplay]);
+
+  const goTo = useCallback(
+    (index: number) => {
+      setCurrent(index);
+      resetAutoplay();
+    },
+    [resetAutoplay]
   );
 
   useEffect(() => {
-    const id = setInterval(next, 3500);
-    return () => clearInterval(id);
-  }, [next]);
+    resetAutoplay();
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+  }, [resetAutoplay]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) next();
+      else prev();
+    }
+  };
 
   return (
     <SectionShell bg="neutral" id="themen">
@@ -39,7 +77,12 @@ export default function TopicsSection() {
 
       {/* Topic carousel */}
       <div className="relative mx-auto max-w-4xl">
-        <div className="relative overflow-hidden rounded-2xl aspect-[16/7] min-h-[260px]">
+        <div
+          className="relative overflow-hidden rounded-2xl aspect-[16/7] min-h-[260px]"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Background images */}
           {c.topics.map((topic, i) => (
             <div
@@ -76,7 +119,7 @@ export default function TopicsSection() {
               {c.topics.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrent(i)}
+                  onClick={() => goTo(i)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === current
                       ? "w-6 bg-emerald-500"

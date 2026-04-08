@@ -230,6 +230,27 @@ export const landingPageContentEn: LandingPageContent = {
         rating: 5,
         isPlaceholder: false,
       },
+      {
+        name: "Tomasz",
+        role: "from Poland",
+        quote: "I tried so many apps and textbooks, but Flemming's course is where things finally clicked. The combination of audios, videos, and AI exercises is brilliant – after just two weeks, I could suddenly react much faster in meetings without endlessly searching for words.",
+        rating: 5,
+        isPlaceholder: false,
+      },
+      {
+        name: "Yuki",
+        role: "from Japan",
+        quote: "What I love most: the topics are all from real life. I finally learned to talk about everyday things like housing, work, and hobbies the way Germans actually do. My colleagues noticed the difference right away!",
+        rating: 5,
+        isPlaceholder: false,
+      },
+      {
+        name: "Sofia",
+        role: "from Greece",
+        quote: "I was skeptical whether you can really change anything in 30 days. But Flemming's method convinced me: the daily lessons are short enough to stay consistent, yet intense enough to make real progress. The AI speaking practice especially helped me become much more confident.",
+        rating: 5,
+        isPlaceholder: false,
+      },
     ],
   },
 
@@ -289,7 +310,7 @@ export const landingPageContentEn: LandingPageContent = {
       },
       {
         title: "30-Day Challenge + Group Coaching",
-        price: "2,490 €",
+        price: "990 €",
         billingNote: "Installments available",
         badge: "Premium",
         cta: {
@@ -300,6 +321,16 @@ export const landingPageContentEn: LandingPageContent = {
       },
     ],
     features: [
+      {
+        text: "Video course with explanations & motivation videos",
+        includedInChallenge: true,
+        includedInCoaching: true,
+      },
+      {
+        text: "Essential B2 vocabulary",
+        includedInChallenge: true,
+        includedInCoaching: true,
+      },
       {
         text: "30-day program with 30 lessons",
         includedInChallenge: true,

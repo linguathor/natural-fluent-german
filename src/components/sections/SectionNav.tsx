@@ -25,15 +25,12 @@ const navItemsEn = [
 ];
 
 export default function SectionNav() {
-  const [visible, setVisible] = useState(false);
   const [active, setActive] = useState("");
   const { language, toggleLanguage } = useLanguage();
   const navItems = language === "de" ? navItemsDe : navItemsEn;
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 400);
-
       const sections = navItems
         .map((item) => ({
           id: item.href.slice(1),
@@ -56,10 +53,7 @@ export default function SectionNav() {
 
   return (
     <nav
-      className={cn(
-        "fixed top-0 inset-x-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur-sm transition-transform duration-300",
-        visible ? "translate-y-0" : "-translate-y-full"
-      )}
+      className="fixed top-0 inset-x-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur-sm"
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex items-center gap-1 overflow-x-auto py-2.5 scrollbar-hide md:justify-center md:gap-2">
