@@ -302,9 +302,9 @@ export const landingPageContentEn: LandingPageContent = {
     tiers: [
       {
         title: "30-Day Challenge",
-        price: "179 €",
+        price: "189 €",
         originalPrice: "249 €",
-        priceNote: "Launch discount: Only until April 15!",
+        priceNote: "Launch discount: Only until April 22!",
         cta: {
           label: "Sign up now",
           href: "https://www.copecart.com/products/6f447bf1/checkout",
