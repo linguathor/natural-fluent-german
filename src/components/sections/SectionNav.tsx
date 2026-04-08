@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/language-context";
 import { Menu, X } from "lucide-react";
@@ -34,6 +34,19 @@ export default function SectionNav({ banner }: SectionNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const navItems = language === "de" ? navItemsDe : navItemsEn;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const update = () => {
+      document.documentElement.style.setProperty("--nav-height", `${el.offsetHeight}px`);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +75,7 @@ export default function SectionNav({ banner }: SectionNavProps) {
   const activeLabel = navItems.find((item) => item.href.slice(1) === active)?.label;
 
   return (
-    <div className="fixed top-0 inset-x-0 z-40">
+    <div ref={wrapperRef} className="fixed top-0 inset-x-0 z-40">
       {/* Optional countdown banner */}
       {banner}
 

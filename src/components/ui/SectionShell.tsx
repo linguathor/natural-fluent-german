@@ -5,6 +5,7 @@ interface SectionShellProps {
   className?: string;
   id?: string;
   bg?: "white" | "neutral" | "dark" | "accent";
+  style?: React.CSSProperties;
 }
 
 export default function SectionShell({
@@ -12,6 +13,7 @@ export default function SectionShell({
   className,
   id,
   bg = "white",
+  style,
 }: SectionShellProps) {
   const bgClass = {
     white: "bg-white",
@@ -21,7 +23,7 @@ export default function SectionShell({
   }[bg];
 
   return (
-    <section id={id} className={cn(bgClass, "py-24 md:py-32", className)}>
+    <section id={id} className={cn(bgClass, "py-24 md:py-32", className)} style={style}>
       <div className="mx-auto max-w-6xl px-5 md:px-8">{children}</div>
     </section>
   );

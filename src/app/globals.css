@@ -24,7 +24,7 @@ body {
 /* Smooth scroll for anchor links — accounts for sticky header (banner + nav) */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: var(--nav-height, 100px);
 }
 
 /* Hide scrollbar for horizontal nav */
