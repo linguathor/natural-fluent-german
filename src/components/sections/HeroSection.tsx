@@ -12,7 +12,7 @@ export default function HeroSection() {
   const c = useContent().hero;
   const media = useContent().media;
   return (
-    <SectionShell bg="white" className="pt-20 md:pt-28 pb-16 md:pb-24">
+    <SectionShell bg="white" className="pt-28 md:pt-32 pb-16 md:pb-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         {/* Left: Copy */}
         <AnimateOnScroll>

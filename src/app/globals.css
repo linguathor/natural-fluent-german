@@ -21,10 +21,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Smooth scroll for anchor links */
+/* Smooth scroll for anchor links — accounts for sticky header (banner + nav) */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 60px;
+  scroll-padding-top: 100px;
 }
 
 /* Hide scrollbar for horizontal nav */
