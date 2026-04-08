@@ -78,7 +78,7 @@ export default function TopicsSection() {
       {/* Topic carousel */}
       <div className="relative mx-auto max-w-4xl">
         <div
-          className="relative overflow-hidden rounded-2xl aspect-[16/7] min-h-[260px]"
+          className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/7]"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -105,8 +105,24 @@ export default function TopicsSection() {
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/55" />
 
+          {/* Navigation arrows — inside overflow-hidden so they're always visible */}
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110"
+            aria-label="Vorheriges Thema"
+          >
+            <ChevronLeft className="h-5 w-5 text-stone-700" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110"
+            aria-label="Nächstes Thema"
+          >
+            <ChevronRight className="h-5 w-5 text-stone-700" />
+          </button>
+
           {/* Text content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full px-10 py-12 text-center md:px-20 md:py-16">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-14 py-12 text-center md:px-20 md:py-16">
             <p className="text-sm font-medium uppercase tracking-wider text-emerald-400 mb-4">
               Thema {current + 1} von {total}
             </p>
@@ -132,17 +148,17 @@ export default function TopicsSection() {
           </div>
         </div>
 
-        {/* Navigation arrows */}
+        {/* Desktop: arrows outside the card */}
         <button
           onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110 md:-left-5"
+          className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110"
           aria-label="Vorheriges Thema"
         >
           <ChevronLeft className="h-5 w-5 text-stone-700" />
         </button>
         <button
           onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110 md:-right-5"
+          className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-lg transition-transform hover:scale-110"
           aria-label="Nächstes Thema"
         >
           <ChevronRight className="h-5 w-5 text-stone-700" />
