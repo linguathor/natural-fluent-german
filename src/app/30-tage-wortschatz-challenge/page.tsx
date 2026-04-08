@@ -18,10 +18,10 @@ import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import CountdownBanner from "@/components/ui/CountdownBanner";
 
-// Deadline: April 15, 2026 at midnight (00:00 CET = 22:00 UTC April 14)
-const BANNER_DEADLINE = new Date("2026-04-14T22:00:00Z");
+// Deadline: April 22, 2026 at midnight (00:00 CET = 22:00 UTC April 21)
+const BANNER_DEADLINE = new Date("2026-04-21T22:00:00Z");
 const BANNER_MESSAGE =
-  "Start-Rabatt für alle Wartelistenteilnehmer – Vom 09. bis 15. April (also 14. April bis 0 Uhr) nur 179 statt 249 €";
+  "Start-Rabatt vom 15.–22. April – nur 189 statt 249 €";
 
 // ── SEO Metadata ────────────────────────────────
 export const metadata: Metadata = {
