@@ -7,6 +7,24 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { trackEvent } from "@/lib/analytics";
 import { ChevronDown } from "lucide-react";
 
+function linkifyEmail(text: string) {
+  const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+  const parts = text.split(emailRegex);
+  return parts.map((part, i) =>
+    emailRegex.test(part) ? (
+      <a
+        key={i}
+        href={`mailto:${part}`}
+        className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function FaqSection() {
   const c = useContent().faq;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -55,7 +73,7 @@ export default function FaqSection() {
                 }`}
               >
                 <p className="text-stone-600 leading-relaxed pr-8">
-                  {item.answer}
+                  {linkifyEmail(item.answer)}
                 </p>
               </div>
             </div>

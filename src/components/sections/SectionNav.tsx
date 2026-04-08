@@ -55,14 +55,14 @@ export default function SectionNav() {
     <nav
       className="fixed top-0 inset-x-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur-sm"
     >
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex items-center gap-1 overflow-x-auto py-2.5 scrollbar-hide md:justify-center md:gap-2">
+      <div className="mx-auto max-w-6xl px-2 md:px-4">
+        <div className="flex items-center justify-center gap-0.5 py-2 md:gap-2 md:py-2.5">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className={cn(
-                "shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors md:text-sm",
+                "rounded-full px-2 py-1 text-[11px] font-medium transition-colors md:px-3.5 md:py-1.5 md:text-sm",
                 active === item.href.slice(1)
                   ? "bg-emerald-700 text-white"
                   : "text-stone-600 hover:bg-stone-100 hover:text-stone-900"
@@ -75,7 +75,7 @@ export default function SectionNav() {
           {/* Language toggle */}
           <button
             onClick={toggleLanguage}
-            className="ml-2 shrink-0 rounded-full border border-stone-300 px-3 py-1.5 text-xs font-medium text-stone-600 transition-colors hover:bg-stone-100 md:text-sm"
+            className="ml-1 rounded-full border border-stone-300 px-2 py-1 text-[11px] font-medium text-stone-600 transition-colors hover:bg-stone-100 md:ml-2 md:px-3 md:py-1.5 md:text-sm"
             aria-label="Toggle language"
           >
             {language === "de" ? "EN" : "DE"}
