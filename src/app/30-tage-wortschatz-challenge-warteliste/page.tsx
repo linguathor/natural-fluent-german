@@ -17,6 +17,9 @@ import FitSection from "@/components/sections/FitSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import CountdownBanner from "@/components/ui/CountdownBanner";
+import { CheckoutUrlProvider } from "@/lib/checkout-url-context";
+
+const WARTELISTE_CHECKOUT = "https://www.copecart.com/products/b6910dd6/checkout";
 
 // Deadline: April 15, 2026 at midnight (00:00 CET = 22:00 UTC April 14)
 const BANNER_DEADLINE = new Date("2026-04-14T22:00:00Z");
@@ -124,6 +127,7 @@ export default function WortschatzChallengeWartelistePage() {
       />
 
       <main>
+        <CheckoutUrlProvider url={WARTELISTE_CHECKOUT}>
         <HeroSection />
         <SocialProofSection />
         <PainSection />
@@ -141,6 +145,7 @@ export default function WortschatzChallengeWartelistePage() {
         <FitSection />
         <FaqSection />
         <FinalCtaSection />
+        </CheckoutUrlProvider>
       </main>
     </>
   );

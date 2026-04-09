@@ -3,6 +3,9 @@
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import type { CtaContent } from "@/content/landing-page";
+import { useCheckoutUrl } from "@/lib/checkout-url-context";
+
+const COPECART_ORIGIN = "https://www.copecart.com";
 
 interface CtaButtonProps {
   cta: CtaContent;
@@ -37,6 +40,12 @@ export default function CtaButton({
   className,
   icon,
 }: CtaButtonProps) {
+  const checkoutOverride = useCheckoutUrl();
+  const href =
+    checkoutOverride && cta.href.startsWith(COPECART_ORIGIN)
+      ? checkoutOverride
+      : cta.href;
+
   const handleClick = () => {
     trackEvent("cta_click", {
       location: trackingLocation,
@@ -46,7 +55,7 @@ export default function CtaButton({
 
   return (
     <a
-      href={cta.href}
+      href={href}
       onClick={handleClick}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700",
