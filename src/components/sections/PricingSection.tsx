@@ -54,7 +54,15 @@ function SlotStatus({
   );
 }
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  challengePriceOverride?: string;
+  challengePriceNoteOverride?: string;
+}
+
+export default function PricingSection({
+  challengePriceOverride,
+  challengePriceNoteOverride,
+}: PricingSectionProps = {}) {
   const c = useContent().pricing;
   const { language } = useLanguage();
   return (
@@ -94,7 +102,7 @@ export default function PricingSection() {
 
               <div className="mb-1 flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold text-stone-900">
-                  {tier.price}
+                  {i === 0 && challengePriceOverride ? challengePriceOverride : tier.price}
                 </span>
                 {tier.originalPrice && (
                   <span className="text-lg text-stone-400 line-through">
@@ -107,9 +115,9 @@ export default function PricingSection() {
                   {tier.billingNote}
                 </p>
               )}
-              {tier.priceNote && (
+              {(i === 0 && challengePriceNoteOverride ? challengePriceNoteOverride : tier.priceNote) && (
                 <p className="mb-6 text-sm font-semibold text-red-600">
-                  {tier.priceNote}
+                  {i === 0 && challengePriceNoteOverride ? challengePriceNoteOverride : tier.priceNote}
                 </p>
               )}
               {!tier.billingNote && !tier.priceNote && <div className="mb-6" />}

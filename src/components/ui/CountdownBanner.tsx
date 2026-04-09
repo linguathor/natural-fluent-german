@@ -35,9 +35,11 @@ export default function CountdownBanner({
   deadline,
   message,
 }: CountdownBannerProps) {
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(deadline));
+  const [timeLeft, setTimeLeft] = useState(null as ReturnType<typeof getTimeLeft>);
 
   useEffect(() => {
+    // Set initial value on client only (fixes hydration mismatch)
+    setTimeLeft(getTimeLeft(deadline));
     const id = setInterval(() => setTimeLeft(getTimeLeft(deadline)), 1000);
     return () => clearInterval(id);
   }, [deadline]);
