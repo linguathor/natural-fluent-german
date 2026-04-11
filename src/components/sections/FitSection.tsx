@@ -45,7 +45,7 @@ export default function FitSection() {
               alt="Flemming"
               fill
               className="object-cover object-top"
-              sizes="(max-width: 768px) 260px, 220px"
+              sizes="(max-width: 768px) 260px, 300px"
             />
           </div>
         </AnimateOnScroll>
