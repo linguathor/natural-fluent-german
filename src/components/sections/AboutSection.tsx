@@ -17,7 +17,8 @@ export default function AboutSection() {
               alt="Flemming Goldbecher – Deutsch-Coach"
               fill
               className="object-cover object-top"
-              sizes="(max-width: 1024px) 256px, 340px"
+              sizes="(max-width: 1024px) 800px, 1080px"
+              quality={90}
             />
           </div>
         </AnimateOnScroll>
