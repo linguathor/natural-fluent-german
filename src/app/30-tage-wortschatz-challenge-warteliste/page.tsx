@@ -7,8 +7,10 @@ import SocialProofSection from "@/components/sections/SocialProofSection";
 import PainSection from "@/components/sections/PainSection";
 import MethodSection from "@/components/sections/MethodSection";
 import CourseStructureSection from "@/components/sections/CourseStructureSection";
+import LessonStepsSection from "@/components/sections/LessonStepsSection";
 import TopicsSection from "@/components/sections/TopicsSection";
 import TransformationSection from "@/components/sections/TransformationSection";
+import AboutSection from "@/components/sections/AboutSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CoachingSection from "@/components/sections/CoachingSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -133,8 +135,10 @@ export default function WortschatzChallengeWartelistePage() {
         <PainSection />
         <MethodSection />
         <CourseStructureSection />
+        <LessonStepsSection />
         <TopicsSection />
         <TransformationSection />
+        <AboutSection />
         <TestimonialsSection />
         <CoachingSection />
         <PricingSection

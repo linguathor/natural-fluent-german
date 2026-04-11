@@ -13,7 +13,7 @@ export default function AboutSection() {
         <AnimateOnScroll>
           <div className="relative mx-auto aspect-[3/4] w-64 overflow-hidden rounded-2xl lg:w-full">
             <Image
-              src="/flemming-about.webp"
+              src="/flemming-about.jpg"
               alt="Flemming Goldbecher – Deutsch-Coach"
               fill
               className="object-cover object-top"

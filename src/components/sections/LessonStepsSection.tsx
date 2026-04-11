@@ -40,7 +40,7 @@ export default function LessonStepsSection() {
       <AnimateOnScroll delay={0.45}>
         <div className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl shadow-md">
           <Image
-            src="/kurs-screenshot.webp"
+            src="/kurs-screenshot.jpg"
             alt="Screenshot der Kursplattform"
             width={900}
             height={506}
