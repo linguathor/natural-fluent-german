@@ -3,7 +3,7 @@
 import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import Image from "next/image";
 
 export default function AboutSection() {
   const c = useContent().aboutFlemming;
@@ -11,10 +11,15 @@ export default function AboutSection() {
     <SectionShell bg="white" id="ueber-mich">
       <div className="grid items-center gap-10 lg:grid-cols-[340px_1fr] lg:gap-16">
         <AnimateOnScroll>
-          <ImagePlaceholder
-            label={c.photoPlaceholder}
-            className="mx-auto aspect-[3/4] w-64 lg:w-full rounded-2xl"
-          />
+          <div className="relative mx-auto aspect-[3/4] w-64 overflow-hidden rounded-2xl lg:w-full">
+            <Image
+              src="/flemming-about.webp"
+              alt="Flemming Goldbecher – Deutsch-Coach"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 256px, 340px"
+            />
+          </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.12}>

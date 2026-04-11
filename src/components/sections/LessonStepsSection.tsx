@@ -3,7 +3,7 @@
 import { useContent } from "@/lib/language-context";
 import SectionShell from "@/components/ui/SectionShell";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
+import Image from "next/image";
 
 export default function LessonStepsSection() {
   const c = useContent().lessonSteps;
@@ -38,10 +38,13 @@ export default function LessonStepsSection() {
       </div>
 
       <AnimateOnScroll delay={0.45}>
-        <div className="mx-auto mt-10 max-w-3xl">
-          <ImagePlaceholder
-            label={c.screenshotPlaceholder}
-            className="aspect-[16/9] w-full rounded-2xl"
+        <div className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl shadow-md">
+          <Image
+            src="/kurs-screenshot.webp"
+            alt="Screenshot der Kursplattform"
+            width={900}
+            height={506}
+            className="w-full"
           />
         </div>
       </AnimateOnScroll>
