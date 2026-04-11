@@ -57,11 +57,13 @@ function SlotStatus({
 interface PricingSectionProps {
   challengePriceOverride?: string;
   challengePriceNoteOverride?: string;
+  savingsNoteOverride?: string;
 }
 
 export default function PricingSection({
   challengePriceOverride,
   challengePriceNoteOverride,
+  savingsNoteOverride,
 }: PricingSectionProps = {}) {
   const c = useContent().pricing;
   const sp = useContent().socialProof;
@@ -86,12 +88,12 @@ export default function PricingSection({
           <p className="mb-2 text-sm font-semibold text-emerald-700">
             {c.importantNote}
           </p>
-          {c.savingsNote && (
+          {(savingsNoteOverride ?? c.savingsNote) && (
             <p className="mb-12 text-lg font-bold text-red-600">
-              {c.savingsNote}
+              {savingsNoteOverride ?? c.savingsNote}
             </p>
           )}
-          {!c.savingsNote && <div className="mb-12" />}
+          {!(savingsNoteOverride ?? c.savingsNote) && <div className="mb-12" />}
         </div>
       </AnimateOnScroll>
 

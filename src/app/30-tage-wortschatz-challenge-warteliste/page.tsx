@@ -144,6 +144,7 @@ export default function WortschatzChallengeWartelistePage() {
         <PricingSection
           challengePriceOverride="179 €"
           challengePriceNoteOverride="Start-Rabatt: Nur bis 15. April!"
+          savingsNoteOverride="Du sparst heute 70 €"
         />
         <GuaranteeSection />
         <FitSection />

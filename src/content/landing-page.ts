@@ -236,7 +236,7 @@ export const landingPageContent: LandingPageContent = {
   hero: {
     badge: "Für B1–B2 Deutschlernende",
     headline:
-      "Hör auf, dich bei jedem deutschen Gespräch klein zu fühlen.",
+      "Hör auf, dich bei jedem Gespräch auf Deutsch klein zu fühlen.",
     subheadline:
       "Schluss mit Denkpausen und Unsicherheit. Aktiviere in nur einem Monat den Wortschatz, den du für den echten Alltag und deine Karriere in Deutschland wirklich brauchst.",
     primaryCta: {
