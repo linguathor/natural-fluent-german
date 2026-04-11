@@ -3,14 +3,16 @@ import { landingPageContent } from "@/content/landing-page";
 
 import SectionNav from "@/components/sections/SectionNav";
 import HeroSection from "@/components/sections/HeroSection";
-import SocialProofSection from "@/components/sections/SocialProofSection";
 import PainSection from "@/components/sections/PainSection";
-import MethodSection from "@/components/sections/MethodSection";
-import CourseStructureSection from "@/components/sections/CourseStructureSection";
-import TopicsSection from "@/components/sections/TopicsSection";
 import TransformationSection from "@/components/sections/TransformationSection";
+import MethodSection from "@/components/sections/MethodSection";
+import AboutSection from "@/components/sections/AboutSection";
+import CourseStructureSection from "@/components/sections/CourseStructureSection";
+import LessonStepsSection from "@/components/sections/LessonStepsSection";
+import TopicsSection from "@/components/sections/TopicsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CoachingSection from "@/components/sections/CoachingSection";
+import SocialProofSection from "@/components/sections/SocialProofSection";
 import PricingSection from "@/components/sections/PricingSection";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
 import FitSection from "@/components/sections/FitSection";
@@ -123,14 +125,16 @@ export default function WortschatzChallengePage() {
 
       <main>
         <HeroSection />
-        <SocialProofSection />
         <PainSection />
-        <MethodSection />
-        <CourseStructureSection />
-        <TopicsSection />
         <TransformationSection />
+        <MethodSection />
+        <AboutSection />
+        <CourseStructureSection />
+        <LessonStepsSection />
+        <TopicsSection />
         <TestimonialsSection />
         <CoachingSection />
+        <SocialProofSection />
         <PricingSection />
         <GuaranteeSection />
         <FitSection />

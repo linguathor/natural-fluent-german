@@ -10,11 +10,11 @@ export const landingPageContentEn: LandingPageContent = {
   hero: {
     badge: "For B1–B2 German Learners",
     headline:
-      "30-Day Vocabulary Challenge: Own Every Conversation in German.",
+      "Stop feeling small in every German conversation.",
     subheadline:
       "No more awkward pauses or second-guessing yourself. In just one month, unlock the vocabulary you actually need for everyday life and your career in Germany.",
     primaryCta: {
-      label: "Yes, I want to speak more fluently!",
+      label: "Yes, I want to speak with confidence!",
       href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
@@ -49,7 +49,7 @@ export const landingPageContentEn: LandingPageContent = {
         text: "You end up being vague, and you can tell the other person is losing interest.",
       },
       {
-        text: "You're not reaching your full potential at work because the language barrier holds you back.",
+        text: "You stay silent in meetings even though you have an opinion — because you can't find the words.",
       },
     ],
     insight:
@@ -187,7 +187,8 @@ export const landingPageContentEn: LandingPageContent = {
       { text: "Deep familiarity with German colloquial expressions" },
     ],
     emotionalClose:
-      "In just one month, you'll hold conversations without fear. You'll be specific, you'll be understood, and you'll finally feel like you belong. You won't be \"the foreigner who barely speaks\" anymore — you'll be someone people genuinely enjoy talking to. Isn't that short burst of focus worth it?",
+      "Imagine this: You\u2019re sitting at dinner with your German colleagues. Someone tells a joke, and you laugh because you actually got it. You make a comment. Everyone listens. No hesitation. No \u2018What\u2019s the word again?\u2019. No apologetic gestures. Just you and the language, finally on the same level. That\u2019s possible. In 30 days. With the right words.",
+    visionCta: "Yes, I want to speak with confidence!",
     before: [
       "Long pauses while speaking",
       "Feeling insecure in conversations",
@@ -299,6 +300,7 @@ export const landingPageContentEn: LandingPageContent = {
     subheadline:
       "Your choice: is the 30-Day Challenge enough, or do you want to add group coaching for the full experience?",
     importantNote: "Both options get you to the finish line!",
+    savingsNote: "You save €60 today",
     tiers: [
       {
         title: "30-Day Challenge",
@@ -407,8 +409,8 @@ export const landingPageContentEn: LandingPageContent = {
 
   // ── Guarantee ─────────────────────────────────
   guarantee: {
-    headline: "100% satisfaction or your money back.",
-    text: "I'm that confident in this method: if you complete at least 3 full lessons and you're not happy, you'll get a complete refund within the first few days. No questions asked.",
+    headline: "You risk nothing.",
+    text: "If within the first 7 days you feel this course isn\u2019t for you, you get 100% of your money back. No ifs, no buts, no excuses.",
   },
 
   // ── Fit ───────────────────────────────────────
@@ -466,8 +468,11 @@ export const landingPageContentEn: LandingPageContent = {
         question: "Do I get lifetime access?",
         answer:
           "Yes — you get lifetime access to all course content.",
-      },
-    ],
+      },      {
+        question: "Can't I just learn this on YouTube or with Duolingo?",
+        answer:
+          "You\u2019re welcome to try. But this challenge combines intensity with science-backed language learning techniques. Plus, you\u2019ll hardly find more authentic, everyday-relevant material anywhere else. That\u2019s what makes this course truly unique.",
+      },    ],
   },
 
   // ── Final CTA ─────────────────────────────────
@@ -475,7 +480,7 @@ export const landingPageContentEn: LandingPageContent = {
     headline: "Ready to finally speak German with confidence?",
     text: "Start your 30-Day Challenge now and unlock the vocabulary you've been missing. You've got nothing to lose — and hundreds of new words to gain.",
     primaryCta: {
-      label: "Yes, I want to speak more fluently!",
+      label: "Yes, I want to speak with confidence!",
       href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
@@ -484,6 +489,41 @@ export const landingPageContentEn: LandingPageContent = {
     },
     reassurance:
       "100% money-back guarantee · Lifetime access · Start immediately",
+  },
+
+  // ── About Flemming ─────────────────────────
+  aboutFlemming: {
+    headline: "About Me",
+    text: "My name is Flemming. I\u2019ve been a German coach for over 8 years and have helped more than 1,500 learners go from insecure to fluent German. I speak 6 languages myself and know the struggles of language learning firsthand. I built this course from what language experts and learning scientists recommend, what truly helped me learn languages myself, and what has worked brilliantly in my coaching with German learners.",
+    photoPlaceholder: "Photo of Flemming",
+  },
+
+  // ── Lesson Steps ──────────────────────────
+  lessonSteps: {
+    headline: "Here\u2019s what a typical lesson looks like\u2026",
+    steps: [
+      {
+        title: "Step 1",
+        description: "Review the previous day\u2019s vocabulary using the retention technique you\u2019ll learn in the course",
+      },
+      {
+        title: "Step 2",
+        description: "Listen to a 5\u201310-minute audio or video and work through the vocabulary intensively using the transcript",
+      },
+      {
+        title: "Step 3",
+        description: "Use a worksheet to review the key new words you\u2019ve learned and write them in a notebook",
+      },
+      {
+        title: "Step 4",
+        description: "Actively use the new words in conversation with AI \u2014 you\u2019ll get perfectly tailored prompts that push you to use the vocabulary",
+      },
+      {
+        title: "Step 5",
+        description: "Your active vocabulary has grown and will be reinforced again in the next review cycle",
+      },
+    ],
+    screenshotPlaceholder: "Course platform screenshot",
   },
 
   // ── Media Assets ──────────────────────────────
@@ -498,6 +538,7 @@ export const landingPageContentEn: LandingPageContent = {
 
   // ── Social Proof ──────────────────────────────
   socialProof: {
+    headlineBeforePricing: "Over 1,500 learners have broken through their vocabulary ceiling with this method.",
     stats: [
       {
         icon: "Youtube",

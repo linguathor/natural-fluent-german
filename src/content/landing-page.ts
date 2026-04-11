@@ -75,6 +75,7 @@ export interface TransformationContent {
   statLabel: string;
   outcomes: OutcomeItem[];
   emotionalClose: string;
+  visionCta: string;
   before: string[];
   after: string[];
 }
@@ -134,6 +135,7 @@ export interface PricingContent {
   headline: string;
   subheadline: string;
   importantNote: string;
+  savingsNote?: string;
   tiers: PricingTier[];
   features: PricingFeature[];
   coachingSlots: CoachingSlot[];
@@ -168,6 +170,23 @@ export interface FinalCtaContent {
   reassurance: string;
 }
 
+export interface AboutFlemmingContent {
+  headline: string;
+  text: string;
+  photoPlaceholder: string;
+}
+
+export interface LessonStep {
+  title: string;
+  description: string;
+}
+
+export interface LessonStepsContent {
+  headline: string;
+  steps: LessonStep[];
+  screenshotPlaceholder: string;
+}
+
 export interface SocialProofStat {
   icon: string;
   value: string;
@@ -175,6 +194,7 @@ export interface SocialProofStat {
 }
 
 export interface SocialProofContent {
+  headlineBeforePricing?: string;
   stats: SocialProofStat[];
 }
 
@@ -202,6 +222,8 @@ export interface LandingPageContent {
   faq: FaqContent;
   finalCta: FinalCtaContent;
   socialProof: SocialProofContent;
+  aboutFlemming: AboutFlemmingContent;
+  lessonSteps: LessonStepsContent;
   media: MediaAssets;
 }
 
@@ -214,11 +236,11 @@ export const landingPageContent: LandingPageContent = {
   hero: {
     badge: "Für B1–B2 Deutschlernende",
     headline:
-      "30 Tage Wortschatz-Challenge: Jedes Gespräch auf Deutsch souverän führen.",
+      "Hör auf, dich bei jedem deutschen Gespräch klein zu fühlen.",
     subheadline:
       "Schluss mit Denkpausen und Unsicherheit. Aktiviere in nur einem Monat den Wortschatz, den du für den echten Alltag und deine Karriere in Deutschland wirklich brauchst.",
     primaryCta: {
-      label: "Ja, ich will flüssiger sprechen!",
+      label: "Ja, ich will sicher sprechen!",
       href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
@@ -253,7 +275,7 @@ export const landingPageContent: LandingPageContent = {
         text: "Du bleibst unpräzise und hast das Gefühl, dein Gegenüber zu langweilen.",
       },
       {
-        text: "Du nutzt nicht dein volles Potenzial im Job, weil die Sprachbarriere dich bremst.",
+        text: "Du bist im Meeting still, obwohl du eine Meinung hättest, weil dir die Worte fehlen.",
       },
     ],
     insight:
@@ -391,7 +413,8 @@ export const landingPageContent: LandingPageContent = {
       { text: "Umfangreiche Kenntnisse der deutschen Umgangssprache" },
     ],
     emotionalClose:
-      'In nur einem Monat führst du Gespräche ohne Angst. Du wirst konkret, du wirst verstanden und du fühlst dich endlich integriert. Du bist nicht mehr "der Ausländer, der wenig sagt", sondern ein geschätzter Gesprächspartner. Ist dieser kurze Fokus nicht die Mühe wert?',
+      "Stell dir vor: Du sitzt beim Abendessen mit deutschen Kollegen. Jemand erzählt einen Witz, und du lachst mit, weil du verstanden hast. Du machst einen Kommentar. Alle hören zu. Kein Zögern. Kein \u2018Wie heißt das nochmal?\u2019. Keine entschuldigende Geste. Nur du und die Sprache, endlich auf Augenhöhe. Das ist möglich. In 30 Tagen. Mit den richtigen Worten.",
+    visionCta: "Ja, ich will sicher sprechen!",
     before: [
       "Lange Denkpausen beim Sprechen",
       "Unsicherheit in Gesprächen",
@@ -504,6 +527,7 @@ export const landingPageContent: LandingPageContent = {
     subheadline:
       "Du hast die Wahl: Reicht dir die 30 Tage Challenge oder willst du zusätzlich ein Gruppencoaching buchen für die volle Betreuung?",
     importantNote: "Beide Varianten führen dich an dein Ziel!",
+    savingsNote: "Du sparst heute 60 €",
     tiers: [
       {
         title: "30 Tage Challenge",
@@ -612,8 +636,8 @@ export const landingPageContent: LandingPageContent = {
 
   // ── Guarantee ─────────────────────────────────
   guarantee: {
-    headline: "100 % Zufriedenheit oder Geld zurück.",
-    text: "Ich bin so überzeugt von meiner Methode: Wenn du mindestens 3 Lektionen vollständig absolviert hast und nicht zufrieden bist, bekommst du innerhalb der ersten Tage dein Geld komplett zurück. Ohne Wenn und Aber.",
+    headline: "Du riskierst nichts.",
+    text: "Wenn du innerhalb der ersten 7 Tage das Gefühl hast, dass dieser Kurs nichts für dich ist, bekommst du 100% deines Geldes zurück. Kein Wenn und Aber, keine Ausreden.",
   },
 
   // ── Fit ───────────────────────────────────────
@@ -672,6 +696,11 @@ export const landingPageContent: LandingPageContent = {
         answer:
           "Ja, du hast lebenslangen Zugriff auf alle Kursinhalte.",
       },
+      {
+        question: "Kann ich das nicht einfach auf YouTube oder mit Duolingo lernen?",
+        answer:
+          "Du kannst es gern versuchen. Aber diese Challenge vereint Intensität mit wissenschaftlichen Erkenntnissen zum Thema Sprachenlernen. Dazu wirst du kaum authentischeres und für den Alltag relevanteres Material finden. Damit ist dieser Kurs einzigartig.",
+      },
     ],
   },
 
@@ -680,7 +709,7 @@ export const landingPageContent: LandingPageContent = {
     headline: "Bereit, endlich flüssig Deutsch zu sprechen?",
     text: "Starte jetzt deine 30-Tage-Challenge und aktiviere den Wortschatz, der dir bisher gefehlt hat. Du hast nichts zu verlieren — nur hunderte neue Wörter zu gewinnen.",
     primaryCta: {
-      label: "Ja, ich will flüssiger sprechen!",
+      label: "Ja, ich will sicher sprechen!",
       href: "https://www.copecart.com/products/6f447bf1/checkout",
     },
     secondaryCta: {
@@ -689,6 +718,41 @@ export const landingPageContent: LandingPageContent = {
     },
     reassurance:
       "100 % Geld-zurück-Garantie · Lebenslanger Zugriff · Sofort starten",
+  },
+
+  // ── About Flemming ─────────────────────────────
+  aboutFlemming: {
+    headline: "Über mich",
+    text: "Mein Name ist Flemming. Ich bin seit über 8 Jahren Deutsch-Coach und habe in dieser Zeit mehr als 1.500 Lernende dabei begleitet, von unsicherem zu fließendem Deutsch zu kommen. Ich spreche selbst 6 Sprachen und kenne die Probleme, denen man beim Lernen begegnet, sehr gut. Diesen Kurs habe ich aus dem gebaut, was Sprachexperten und Lernwissenschaftler empfehlen, was mir beim Sprachenlernen selbst wirklich geholfen hat und was auch in meinem Coaching mit Deutschlernenden super funktioniert hat.",
+    photoPlaceholder: "Foto von Flemming",
+  },
+
+  // ── Lesson Steps ──────────────────────────────
+  lessonSteps: {
+    headline: "So sieht eine typische Lektion des Kurses aus…",
+    steps: [
+      {
+        title: "Schritt 1",
+        description: "Du wiederholst die Vokabeln des Vortages mit Hilfe der Wortschatz-Technik, die du im Kurs lernst",
+      },
+      {
+        title: "Schritt 2",
+        description: "Du hörst ein 5–10-minütiges Audio oder Video und arbeitest dich mit Hilfe des Transkripts intensiv durch das Vokabular",
+      },
+      {
+        title: "Schritt 3",
+        description: "Mit Hilfe eines Worksheets prüfst du die wichtigsten neuen Wörter, die du gelernt hast und schreibst sie in ein Notizbuch",
+      },
+      {
+        title: "Schritt 4",
+        description: "Du nutzt die neuen Wörter ganz aktiv beim Sprechen mit der Künstlichen Intelligenz – dazu bekommst du ideal angepasste Prompts (Befehle), die dich animieren, den Wortschatz zu nutzen",
+      },
+      {
+        title: "Schritt 5",
+        description: "Dein aktiver Wortschatz hat sich erweitert und wird in der nächsten Wiederholung nochmal gefestigt",
+      },
+    ],
+    screenshotPlaceholder: "Screenshot der Kursplattform",
   },
 
   // ── Media Assets ──────────────────────────────
@@ -703,6 +767,7 @@ export const landingPageContent: LandingPageContent = {
 
   // ── Social Proof ──────────────────────────────
   socialProof: {
+    headlineBeforePricing: "Über 1.500 Lernende haben mit dieser Methode ihren Wortschatz durchbrochen.",
     stats: [
       {
         icon: "Youtube",

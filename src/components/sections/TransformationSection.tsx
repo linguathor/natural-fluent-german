@@ -111,7 +111,7 @@ export default function TransformationSection() {
               </p>
               <div className="mt-6">
                 <CtaButton
-                cta={content.hero.primaryCta}
+                  cta={{ label: c.visionCta, href: content.hero.primaryCta.href }}
                   variant="primary"
                   size="md"
                   trackingLocation="transformation"

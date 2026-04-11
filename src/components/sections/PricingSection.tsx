@@ -64,18 +64,34 @@ export default function PricingSection({
   challengePriceNoteOverride,
 }: PricingSectionProps = {}) {
   const c = useContent().pricing;
+  const sp = useContent().socialProof;
   const { language } = useLanguage();
   return (
     <SectionShell bg="neutral" id="preise">
+      {/* Social proof headline before pricing */}
+      {sp.headlineBeforePricing && (
+        <AnimateOnScroll>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-lg font-semibold text-stone-700">
+            {sp.headlineBeforePricing}
+          </p>
+        </AnimateOnScroll>
+      )}
+
       <AnimateOnScroll>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-2xl font-bold text-stone-900 md:text-3xl lg:text-4xl">
             {c.headline}
           </h2>
           <p className="mb-3 text-lg text-stone-600">{c.subheadline}</p>
-          <p className="mb-12 text-sm font-semibold text-emerald-700">
+          <p className="mb-2 text-sm font-semibold text-emerald-700">
             {c.importantNote}
           </p>
+          {c.savingsNote && (
+            <p className="mb-12 text-lg font-bold text-red-600">
+              {c.savingsNote}
+            </p>
+          )}
+          {!c.savingsNote && <div className="mb-12" />}
         </div>
       </AnimateOnScroll>
 
