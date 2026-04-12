@@ -42,3 +42,14 @@ html {
     -webkit-tap-highlight-color: transparent;
   }
 }
+
+/* Ensure framer-motion animated elements are always visible when the user
+   has requested reduced motion at the OS level. This overrides any inline
+   opacity/transform that framer-motion writes into the SSR HTML before JS
+   has had a chance to run the animation. */
+@media (prefers-reduced-motion: reduce) {
+  .aos-element {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
