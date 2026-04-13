@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import type { CtaContent } from "@/content/landing-page";
 import { useCheckoutUrl } from "@/lib/checkout-url-context";
+import { useCtaNote } from "@/lib/cta-note-context";
 
 const COPECART_ORIGIN = "https://www.copecart.com";
 
@@ -41,6 +42,7 @@ export default function CtaButton({
   icon,
 }: CtaButtonProps) {
   const checkoutOverride = useCheckoutUrl();
+  const ctaNote = useCtaNote();
   const href =
     checkoutOverride && cta.href.startsWith(COPECART_ORIGIN)
       ? checkoutOverride
@@ -54,18 +56,23 @@ export default function CtaButton({
   };
 
   return (
-    <a
-      href={href}
-      onClick={handleClick}
-      className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700",
-        variantClasses[variant],
-        sizeClasses[size],
-        className
+    <span className="inline-flex flex-col items-center gap-1">
+      <a
+        href={href}
+        onClick={handleClick}
+        className={cn(
+          "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700",
+          variantClasses[variant],
+          sizeClasses[size],
+          className
+        )}
+      >
+        {icon}
+        {cta.label}
+      </a>
+      {ctaNote && (
+        <span className="text-xs text-stone-500 italic">{ctaNote}</span>
       )}
-    >
-      {icon}
-      {cta.label}
-    </a>
+    </span>
   );
 }

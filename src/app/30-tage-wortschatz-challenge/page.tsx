@@ -19,6 +19,7 @@ import FitSection from "@/components/sections/FitSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import CountdownBanner from "@/components/ui/CountdownBanner";
+import { CtaNoteProvider } from "@/lib/cta-note-context";
 
 // Deadline: April 22, 2026 at midnight (00:00 CET = 22:00 UTC April 21)
 const BANNER_DEADLINE = new Date("2026-04-21T22:00:00Z");
@@ -124,6 +125,7 @@ export default function WortschatzChallengePage() {
       />
 
       <main>
+        <CtaNoteProvider note="Anmeldung startet ab 15. April">
         <HeroSection />
         <SocialProofSection />
         <PainSection />
@@ -140,6 +142,7 @@ export default function WortschatzChallengePage() {
         <FitSection />
         <FaqSection />
         <FinalCtaSection />
+        </CtaNoteProvider>
       </main>
     </>
   );
