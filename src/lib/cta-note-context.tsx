@@ -8,7 +8,7 @@ export function CtaNoteProvider({
   note,
   children,
 }: {
-  note: string;
+  note: string | null;
   children: React.ReactNode;
 }) {
   return (

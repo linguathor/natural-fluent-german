@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useContent, useLanguage } from "@/lib/language-context";
 import type { CoachingSlot } from "@/content/landing-page";
 import SectionShell from "@/components/ui/SectionShell";
@@ -68,6 +69,17 @@ export default function PricingSection({
   const c = useContent().pricing;
   const sp = useContent().socialProof;
   const { language } = useLanguage();
+
+  // April 15, 2026 00:01 CEST = April 14, 2026 22:01 UTC
+  const OPEN_DATE = new Date("2026-04-14T22:01:00Z");
+  const [slotsVisible, setSlotsVisible] = useState(false);
+  useEffect(() => {
+    const check = () => setSlotsVisible(new Date() >= OPEN_DATE);
+    check();
+    const interval = setInterval(check, 30_000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <SectionShell bg="neutral" id="preise">
       {/* Social proof headline before pricing */}
@@ -200,7 +212,7 @@ export default function PricingSection({
               />
 
               {/* Coaching slots — directly under premium card */}
-              {tier.highlight && c.coachingSlots.length > 0 && (
+              {tier.highlight && c.coachingSlots.length > 0 && slotsVisible && (
                 <div className="mt-6 border-t border-stone-200 pt-5">
                   <p className="mb-3 text-center text-sm font-semibold text-stone-700">
                     {language === "de" ? "Status Coaching-Plätze:" : "Coaching Spot Availability:"}
