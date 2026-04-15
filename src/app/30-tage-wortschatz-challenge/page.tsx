@@ -21,8 +21,8 @@ import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import CountdownBanner from "@/components/ui/CountdownBanner";
 import TimeGatedCtaNote from "@/components/ui/TimeGatedCtaNote";
 
-// Deadline: April 22, 2026 at midnight (00:00 CET = 22:00 UTC April 21)
-const BANNER_DEADLINE = new Date("2026-04-21T22:00:00Z");
+// Deadline: April 23, 2026 at midnight (00:00 CEST = 22:00 UTC April 22)
+const BANNER_DEADLINE = new Date("2026-04-22T22:00:00Z");
 const BANNER_MESSAGE = "Dieses Angebot endet bald";
 
 // ── SEO Metadata ────────────────────────────────
