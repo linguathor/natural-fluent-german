@@ -683,7 +683,7 @@ export const landingPageContent: LandingPageContent = {
       {
         question: "Gibt es eine Garantie?",
         answer:
-          "Ja, wenn du mindestens 3 Lektionen vollständig absolviert hast und der Meinung bist, dass der Kurs nichts für dich ist, bekommst du dein Geld zurück.",
+          "Sollte die Challenge dir nicht gefallen oder zu schwer oder zu leicht für dich sein, bekommst du 7 Tage lang dein Geld zurück - ohne Diskussionen!",
       },
       {
         question:

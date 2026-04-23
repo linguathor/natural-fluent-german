@@ -131,9 +131,9 @@ export default function WortschatzChallengePage() {
         <PainSection />
         <MethodSection />
         <CourseStructureSection />
+        <TransformationSection />
         <LessonStepsSection />
         <TopicsSection />
-        <TransformationSection />
         <AboutSection />
         <TestimonialsSection />
         <CoachingSection />

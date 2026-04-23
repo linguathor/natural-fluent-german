@@ -147,9 +147,9 @@ export default function WortschatzChallengeWartelistePage() {
         <PainSection />
         <MethodSection />
         <CourseStructureSection />
+        <TransformationSection />
         <LessonStepsSection />
         <TopicsSection />
-        <TransformationSection />
         <AboutSection />
         <TestimonialsSection />
         <CoachingSection />
