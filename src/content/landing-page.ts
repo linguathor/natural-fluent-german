@@ -524,32 +524,17 @@ export const landingPageContent: LandingPageContent = {
   // ── Pricing ───────────────────────────────────
   pricing: {
     headline: "Preise & Anmeldung",
-    subheadline:
-      "Du hast die Wahl: Reicht dir die 30 Tage Challenge oder willst du zusätzlich ein Gruppencoaching buchen für die volle Betreuung?",
-    importantNote: "Beide Varianten führen dich an dein Ziel!",
-    savingsNote: "Du sparst heute 60 €",
+    subheadline: "Melde dich jetzt an und starte in 30 Tagen durch.",
+    importantNote: "",
     tiers: [
       {
         title: "30 Tage Challenge",
-        price: "189 €",
-        originalPrice: "249 €",
-        priceNote: "Start-Rabatt: Nur bis 22. April!",
+        price: "229 €",
         cta: {
           label: "Jetzt anmelden",
           href: "https://www.copecart.com/products/6f447bf1/checkout",
         },
         highlight: false,
-      },
-      {
-        title: "30 Tage Challenge + Gruppencoaching",
-        price: "990 €",
-        billingNote: "In Raten zahlbar",
-        badge: "Premium",
-        cta: {
-          label: "Kostenloses Beratungsgespräch",
-          href: "https://calendly.com/goldbecherflemming/strategiegesprach-mit-flemming",
-        },
-        highlight: true,
       },
     ],
     features: [
@@ -588,50 +573,8 @@ export const landingPageContent: LandingPageContent = {
         includedInChallenge: true,
         includedInCoaching: true,
       },
-      {
-        text: "10 intensive Live-Sitzungen (2× pro Woche)",
-        includedInChallenge: false,
-        includedInCoaching: true,
-      },
-      {
-        text: "Kleingruppe (max. 5 Personen)",
-        includedInChallenge: false,
-        includedInCoaching: true,
-      },
-      {
-        text: "Feedback zu Aussprache, Grammatik und Sprachfluss",
-        includedInChallenge: false,
-        includedInCoaching: true,
-      },
-      {
-        text: "Privater Telegram-Chat (tägliche Sprachnachrichten)",
-        includedInChallenge: false,
-        includedInCoaching: true,
-      },
-      {
-        text: "Bonus: Zugang zu meinen anderen Deutschkursen",
-        includedInChallenge: false,
-        includedInCoaching: true,
-      },
     ],
-    coachingSlots: [
-      {
-        name: "Gruppe 1",
-        schedule: "Di/Do 9 Uhr",
-        status: "ausgebucht",
-      },
-      {
-        name: "Gruppe 2",
-        schedule: "Mo/Mi 19 Uhr",
-        status: "ausgebucht",
-      },
-      {
-        name: "Gruppe 3",
-        schedule: "Di/Do 19 Uhr",
-        status: "wenige-frei",
-        spotsLeft: 3,
-      },
-    ],
+    coachingSlots: [],
   },
 
   // ── Guarantee ─────────────────────────────────

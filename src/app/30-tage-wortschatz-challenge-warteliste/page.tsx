@@ -13,20 +13,14 @@ import TopicsSection from "@/components/sections/TopicsSection";
 import TransformationSection from "@/components/sections/TransformationSection";
 import AboutSection from "@/components/sections/AboutSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import CoachingSection from "@/components/sections/CoachingSection";
 import PricingSection from "@/components/sections/PricingSection";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
 import FitSection from "@/components/sections/FitSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
-import CountdownBanner from "@/components/ui/CountdownBanner";
 import { CheckoutUrlProvider } from "@/lib/checkout-url-context";
 
 const WARTELISTE_CHECKOUT = "https://www.copecart.com/products/b6910dd6/checkout";
-
-// Deadline: April 15, 2026 at midnight (00:00 CET = 22:00 UTC April 14)
-const BANNER_DEADLINE = new Date("2026-04-14T22:00:00Z");
-const BANNER_MESSAGE = "Dieses Angebot endet bald";
 
 // ── SEO Metadata ────────────────────────────────
 export const metadata: Metadata = {
@@ -134,11 +128,7 @@ export default function WortschatzChallengeWartelistePage() {
         }}
       />
 
-      <SectionNav
-        banner={
-          <CountdownBanner deadline={BANNER_DEADLINE} message={BANNER_MESSAGE} />
-        }
-      />
+      <SectionNav />
 
       <main>
         <CheckoutUrlProvider url={WARTELISTE_CHECKOUT}>
@@ -146,17 +136,14 @@ export default function WortschatzChallengeWartelistePage() {
         <SocialProofSection />
         <PainSection />
         <MethodSection />
-        <CourseStructureSection />
         <TransformationSection />
+        <CourseStructureSection />
         <LessonStepsSection />
         <TopicsSection />
         <AboutSection />
         <TestimonialsSection />
-        <CoachingSection />
         <PricingSection
-          challengePriceOverride="179 €"
-          challengePriceNoteOverride="Start-Rabatt: Nur bis 15. April!"
-          savingsNoteOverride="Du sparst heute 70 €"
+          challengePriceOverride="95 €"
         />
         <GuaranteeSection />
         <FitSection />

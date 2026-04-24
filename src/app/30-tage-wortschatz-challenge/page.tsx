@@ -12,18 +12,12 @@ import TopicsSection from "@/components/sections/TopicsSection";
 import TransformationSection from "@/components/sections/TransformationSection";
 import AboutSection from "@/components/sections/AboutSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import CoachingSection from "@/components/sections/CoachingSection";
 import PricingSection from "@/components/sections/PricingSection";
 import GuaranteeSection from "@/components/sections/GuaranteeSection";
 import FitSection from "@/components/sections/FitSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
-import CountdownBanner from "@/components/ui/CountdownBanner";
 import TimeGatedCtaNote from "@/components/ui/TimeGatedCtaNote";
-
-// Deadline: April 23, 2026 at midnight (00:00 CEST = 22:00 UTC April 22)
-const BANNER_DEADLINE = new Date("2026-04-22T22:00:00Z");
-const BANNER_MESSAGE = "Dieses Angebot endet bald";
 
 // ── SEO Metadata ────────────────────────────────
 export const metadata: Metadata = {
@@ -118,11 +112,7 @@ export default function WortschatzChallengePage() {
         }}
       />
 
-      <SectionNav
-        banner={
-          <CountdownBanner deadline={BANNER_DEADLINE} message={BANNER_MESSAGE} />
-        }
-      />
+      <SectionNav />
 
       <main>
         <TimeGatedCtaNote>
@@ -130,13 +120,12 @@ export default function WortschatzChallengePage() {
         <SocialProofSection />
         <PainSection />
         <MethodSection />
-        <CourseStructureSection />
         <TransformationSection />
+        <CourseStructureSection />
         <LessonStepsSection />
         <TopicsSection />
         <AboutSection />
         <TestimonialsSection />
-        <CoachingSection />
         <PricingSection />
         <GuaranteeSection />
         <FitSection />
