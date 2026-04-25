@@ -110,9 +110,9 @@ export default function PricingSection({
       </AnimateOnScroll>
 
       {/* Pricing Cards */}
-      <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+      <div className="mx-auto flex max-w-4xl justify-center gap-8">
         {c.tiers.map((tier, i) => (
-          <AnimateOnScroll key={i} delay={i * 0.12}>
+          <AnimateOnScroll key={i} delay={i * 0.12} className="w-full max-w-md">
             <div
               className={`relative rounded-2xl p-8 ${
                 tier.highlight
