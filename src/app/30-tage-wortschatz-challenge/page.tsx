@@ -89,7 +89,7 @@ function generateCourseSchema() {
     inLanguage: "de",
     offers: {
       "@type": "Offer",
-      price: "189",
+      price: "97",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
     },
