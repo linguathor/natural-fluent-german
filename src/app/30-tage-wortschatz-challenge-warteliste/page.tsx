@@ -20,7 +20,7 @@ import FaqSection from "@/components/sections/FaqSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 import { CheckoutUrlProvider } from "@/lib/checkout-url-context";
 
-const WARTELISTE_CHECKOUT = "https://www.copecart.com/products/b6910dd6/checkout";
+const WARTELISTE_CHECKOUT = "https://www.copecart.com/products/b4f44db1/checkout?dfe=8d32cd51e62a42c9&utm_source=convertkit&utm_medium=email&utm_campaign=Spare%2B50%2B%E2%82%AC!%2BDeine%2BChance%2Bendet%2Bheute!%2B%F0%9F%9A%A8%2B-%2B9812771";
 
 // ── SEO Metadata ────────────────────────────────
 export const metadata: Metadata = {
