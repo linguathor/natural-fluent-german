@@ -94,7 +94,7 @@ function generateCourseSchema() {
     inLanguage: "de",
     offers: {
       "@type": "Offer",
-      price: "47",
+      price: "67",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
     },
@@ -143,7 +143,7 @@ export default function WortschatzChallengeWartelistePage() {
         <AboutSection />
         <TestimonialsSection />
         <PricingSection
-          challengePriceOverride="47 €"
+          challengePriceOverride="67 €"
         />
         <GuaranteeSection />
         <FitSection />

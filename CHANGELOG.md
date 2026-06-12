@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 
 ## [2026-05-27 — ongoing]
 
+### [2026-06-12] - Update Page 2 price from 47 € to 67 € — PR #3 (2026-06-12)
+
+- **Change**: Updated waitlist page (Page 2) challenge price from 47 € to 67 €
+- **Files**: `src/app/30-tage-wortschatz-challenge-warteliste/page.tsx` — schema price and `challengePriceOverride` prop
+- **PR**: https://github.com/linguathor/natural-fluent-german/pull/3
+
 ### [2026-05-27] - Fix Waitlist Page CTA Checkout URL
 
 - **Change**: Updated `WARTELISTE_CHECKOUT` constant on Page 2 (waitlist) to new Copecart product URL with UTM tracking
