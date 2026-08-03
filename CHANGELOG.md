@@ -4,10 +4,11 @@ All notable changes to this project are documented here.
 
 ## [2026-05-27 — ongoing]
 
-### [2026-08-03] - Revert Page 2 price from 67 € to 47 €
+### [2026-08-03] - Revert Page 2 price from 67 € to 47 € — PR #4 (2026-08-03)
 
 - **Change**: Updated waitlist page (Page 2) challenge price from 67 € back to 47 €
 - **Files**: `src/app/30-tage-wortschatz-challenge-warteliste/page.tsx` — schema price and `challengePriceOverride` prop
+- **PR**: https://github.com/linguathor/natural-fluent-german/pull/4
 
 ### [2026-06-12] - Update Page 2 price from 47 € to 67 € — PR #3 (2026-06-12)
 
